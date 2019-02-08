@@ -376,12 +376,12 @@
         <!--Registrati-->
         <scene sceneID="0Ph-dq-Fda">
             <objects>
-                <viewController title="Registrati" hidesBottomBarWhenPushed="YES" id="cpt-wT-10q" sceneMemberID="viewController">
+                <viewController title="Registrati" hidesBottomBarWhenPushed="YES" id="cpt-wT-10q" customClass="Registrati" customModule="istamusic" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eh0-6t-4D8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="immagine-anteprima-corso-2" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-nL-dqo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="immagine-anteprima-corso-2" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-nL-dqo">
                                 <rect key="frame" x="112" y="123" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="YIL-Wc-FFU"/>
@@ -412,18 +412,27 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHO-hJ-rtq">
-                                <rect key="frame" x="288" y="505" width="37" height="30"/>
-                                <state key="normal" title="Salva"/>
+                                <rect key="frame" x="260" y="505" width="65" height="30"/>
+                                <state key="normal" title="Registrati"/>
+                                <connections>
+                                    <action selector="registrati:" destination="cpt-wT-10q" eventType="touchUpInside" id="FW7-W0-epG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l28-zL-CM8">
                                 <rect key="frame" x="162" y="568" width="51" height="30"/>
                                 <state key="normal" title="Annulla">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="annulla:" destination="cpt-wT-10q" eventType="touchUpInside" id="i6A-5G-bVd"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buQ-Ra-bFP">
-                                <rect key="frame" x="270" y="258" width="30" height="30"/>
-                                <state key="normal" title="+"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buQ-Ra-bFP">
+                                <rect key="frame" x="227" y="260" width="22" height="22"/>
+                                <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="addPic:" destination="cpt-wT-10q" eventType="touchUpInside" id="tjf-ed-gga"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -431,11 +440,8 @@
                             <constraint firstItem="gfy-qu-jlq" firstAttribute="trailing" secondItem="Bva-nL-dqo" secondAttribute="trailing" constant="113" id="88m-Gv-1OJ"/>
                             <constraint firstItem="A6j-Gb-J3Y" firstAttribute="top" secondItem="niY-eW-6FM" secondAttribute="bottom" constant="13" id="AFj-NA-eiz"/>
                             <constraint firstItem="gfy-qu-jlq" firstAttribute="bottom" secondItem="l28-zL-CM8" secondAttribute="bottom" constant="20" id="KRP-57-XAK"/>
-                            <constraint firstItem="rCZ-FE-Bli" firstAttribute="top" secondItem="buQ-Ra-bFP" secondAttribute="bottom" constant="30" id="M8Q-lC-bH4"/>
                             <constraint firstItem="gfy-qu-jlq" firstAttribute="trailing" secondItem="rCZ-FE-Bli" secondAttribute="trailing" constant="50" id="NE6-2f-gD7"/>
-                            <constraint firstItem="buQ-Ra-bFP" firstAttribute="leading" secondItem="Bva-nL-dqo" secondAttribute="trailing" constant="8" id="Pul-s5-ISf"/>
                             <constraint firstItem="jyd-kF-zId" firstAttribute="top" secondItem="rCZ-FE-Bli" secondAttribute="bottom" constant="13" id="RDf-nN-UkX"/>
-                            <constraint firstItem="gfy-qu-jlq" firstAttribute="trailing" secondItem="buQ-Ra-bFP" secondAttribute="trailing" constant="75" id="Rdc-12-mQ2"/>
                             <constraint firstItem="BHO-hJ-rtq" firstAttribute="top" secondItem="A6j-Gb-J3Y" secondAttribute="bottom" constant="28" id="Rxl-cb-XVI"/>
                             <constraint firstItem="A6j-Gb-J3Y" firstAttribute="leading" secondItem="gfy-qu-jlq" secondAttribute="leading" constant="50" id="T7v-LL-3PE"/>
                             <constraint firstItem="rCZ-FE-Bli" firstAttribute="leading" secondItem="gfy-qu-jlq" secondAttribute="leading" constant="50" id="WJ0-Jl-0Gg"/>
@@ -443,20 +449,29 @@
                             <constraint firstItem="gfy-qu-jlq" firstAttribute="trailing" secondItem="A6j-Gb-J3Y" secondAttribute="trailing" constant="50" id="Y81-ui-9vO"/>
                             <constraint firstItem="gfy-qu-jlq" firstAttribute="trailing" secondItem="niY-eW-6FM" secondAttribute="trailing" constant="50" id="Yfq-3C-E5V"/>
                             <constraint firstItem="Bva-nL-dqo" firstAttribute="leading" secondItem="gfy-qu-jlq" secondAttribute="leading" constant="112" id="Z0q-jq-ZEY"/>
+                            <constraint firstItem="buQ-Ra-bFP" firstAttribute="leading" secondItem="gfy-qu-jlq" secondAttribute="leading" constant="227" id="Z5x-G1-YXT"/>
                             <constraint firstItem="gfy-qu-jlq" firstAttribute="trailing" secondItem="BHO-hJ-rtq" secondAttribute="trailing" constant="50" id="ZPG-36-bSO"/>
                             <constraint firstItem="l28-zL-CM8" firstAttribute="leading" secondItem="gfy-qu-jlq" secondAttribute="leading" constant="162" id="eRe-bD-VN5"/>
                             <constraint firstItem="jyd-kF-zId" firstAttribute="leading" secondItem="gfy-qu-jlq" secondAttribute="leading" constant="50" id="frM-dT-RYB"/>
                             <constraint firstItem="niY-eW-6FM" firstAttribute="top" secondItem="jyd-kF-zId" secondAttribute="bottom" constant="13" id="g0b-D8-omE"/>
                             <constraint firstItem="gfy-qu-jlq" firstAttribute="trailing" secondItem="jyd-kF-zId" secondAttribute="trailing" constant="50" id="hQ0-Hg-agH"/>
+                            <constraint firstItem="gfy-qu-jlq" firstAttribute="trailing" secondItem="buQ-Ra-bFP" secondAttribute="trailing" constant="126" id="jUA-ry-1NF"/>
                             <constraint firstItem="niY-eW-6FM" firstAttribute="leading" secondItem="gfy-qu-jlq" secondAttribute="leading" constant="50" id="kUg-9U-vhg"/>
+                            <constraint firstItem="rCZ-FE-Bli" firstAttribute="top" secondItem="buQ-Ra-bFP" secondAttribute="bottom" constant="36" id="nCW-Y8-UFj"/>
                             <constraint firstItem="rCZ-FE-Bli" firstAttribute="top" secondItem="Bva-nL-dqo" secondAttribute="bottom" constant="45" id="w0r-2L-vBF"/>
-                            <constraint firstItem="buQ-Ra-bFP" firstAttribute="top" secondItem="gfy-qu-jlq" secondAttribute="top" constant="194" id="x37-Sm-dzC"/>
                             <constraint firstItem="gfy-qu-jlq" firstAttribute="trailing" secondItem="l28-zL-CM8" secondAttribute="trailing" constant="162" id="xPc-0Q-aMK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gfy-qu-jlq"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailText" destination="jyd-kF-zId" id="hQi-ho-SZV"/>
+                        <outlet property="imageProfile" destination="Bva-nL-dqo" id="OI1-NQ-mMj"/>
+                        <outlet property="nometext" destination="rCZ-FE-Bli" id="Dgg-Ja-2wM"/>
+                        <outlet property="passwordTextUno" destination="niY-eW-6FM" id="m35-4x-zdb"/>
+                        <outlet property="passwordtextDue" destination="A6j-Gb-J3Y" id="c02-bB-NYs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGc-1d-icS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -599,6 +614,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="22" height="22"/>
         <image name="immagine-anteprima-corso-2" width="525" height="525"/>
     </resources>
 </document>
