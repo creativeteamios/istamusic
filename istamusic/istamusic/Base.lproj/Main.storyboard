@@ -160,6 +160,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="br5-qa-703">
                                 <rect key="frame" x="311" y="73" width="30" height="30"/>
                                 <state key="normal" title="Map"/>
+                                <connections>
+                                    <segue destination="Kpa-QS-C1g" kind="show" id="P4m-lB-ypC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benvento, Campania" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8P-Y0-OUG">
                                 <rect key="frame" x="16" y="78" width="158" height="21"/>
@@ -213,7 +216,7 @@
         <!--Login-->
         <scene sceneID="kvw-YS-ud1">
             <objects>
-                <viewController title="Login" hidesBottomBarWhenPushed="YES" id="rII-w0-g0g" sceneMemberID="viewController">
+                <viewController title="Login" hidesBottomBarWhenPushed="YES" id="rII-w0-g0g" customClass="Login" customModule="istamusic" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NdA-5j-seM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,22 +243,31 @@
                                 <rect key="frame" x="260" y="413" width="65" height="30"/>
                                 <state key="normal" title="Registrati"/>
                                 <connections>
-                                    <segue destination="cpt-wT-10q" kind="show" id="mLx-pG-dU0"/>
+                                    <segue destination="cpt-wT-10q" kind="show" id="W9s-KC-NV9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3O-FI-JAZ">
                                 <rect key="frame" x="50" y="413" width="151" height="30"/>
                                 <state key="normal" title="Password dimenticata"/>
+                                <connections>
+                                    <action selector="passwordDimenticata:" destination="rII-w0-g0g" eventType="touchUpInside" id="CmU-om-cGy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR0-FQ-uyn">
                                 <rect key="frame" x="287" y="562" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="rII-w0-g0g" eventType="touchUpInside" id="LVe-4k-cvS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTw-Yi-zSB">
                                 <rect key="frame" x="162" y="617" width="51" height="30"/>
                                 <state key="normal" title="Annulla">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="annulla:" destination="rII-w0-g0g" eventType="touchUpInside" id="NLG-df-laO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBe-lE-qRL">
                                 <rect key="frame" x="313" y="26" width="46" height="30"/>
@@ -286,6 +298,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g14-OT-jdL"/>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="CJJ-bq-gU0" id="ARd-wZ-OaA"/>
+                        <outlet property="passwordText" destination="Iun-2S-WuN" id="bVy-5e-gCS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5j-vp-7QL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
