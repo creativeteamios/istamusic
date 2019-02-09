@@ -41,11 +41,11 @@
             </objects>
             <point key="canvasLocation" x="676" y="-83"/>
         </scene>
-        <!--Eventi-->
+        <!--Voti-->
         <scene sceneID="2t6-Zw-6OM">
             <objects>
                 <navigationController id="ePl-KO-Baa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Eventi" id="cRw-5K-IDS"/>
+                    <tabBarItem key="tabBarItem" title="Voti" image="voti" selectedImage="voti" id="cRw-5K-IDS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GDi-7U-zDO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -358,7 +358,7 @@
         <scene sceneID="FTf-J8-Gw1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gTt-oK-Ocf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Band" id="dRj-v9-gSE"/>
+                    <tabBarItem key="tabBarItem" title="Band" image="home" selectedImage="home" id="dRj-v9-gSE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wt9-2G-cNc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -403,13 +403,13 @@
                                 <rect key="frame" x="50" y="404" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ripeti password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6j-Gb-J3Y">
                                 <rect key="frame" x="50" y="447" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHO-hJ-rtq">
                                 <rect key="frame" x="260" y="505" width="65" height="30"/>
@@ -615,6 +615,8 @@
     </scenes>
     <resources>
         <image name="add" width="22" height="22"/>
+        <image name="home" width="26" height="25"/>
         <image name="immagine-anteprima-corso-2" width="525" height="525"/>
+        <image name="voti" width="24" height="24"/>
     </resources>
 </document>
