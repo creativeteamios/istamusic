@@ -13,19 +13,63 @@
         <!--Cerca-->
         <scene sceneID="uHs-sC-2Fe">
             <objects>
-                <tableViewController id="Bij-hE-fq9" sceneMemberID="viewController">
+                <tableViewController id="Bij-hE-fq9" customClass="Cerca" customModule="istamusic" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WGU-fF-KFV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rKA-gt-AXY">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="rKA-gt-AXY" customClass="TableSingleCellCerca" customModule="istamusic">
+                                <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rKA-gt-AXY" id="UWm-Y5-9jx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GYI-Iv-ICZ">
+                                            <rect key="frame" x="10" y="14" width="77" height="77"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="77" id="52s-BR-IYA"/>
+                                                <constraint firstAttribute="height" constant="77" id="awX-Wh-kuu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nome band" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygU-YK-NpV">
+                                            <rect key="frame" x="116" y="14" width="86" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descrizione band" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-iZ-jIv">
+                                            <rect key="frame" x="116" y="42" width="97" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="genere suonato" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZP-G4-pLq">
+                                            <rect key="frame" x="116" y="73" width="107" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ygU-YK-NpV" firstAttribute="leading" secondItem="GYI-Iv-ICZ" secondAttribute="trailing" constant="29" id="68o-Vf-TbK"/>
+                                        <constraint firstItem="lZP-G4-pLq" firstAttribute="leading" secondItem="GYI-Iv-ICZ" secondAttribute="trailing" constant="29" id="BL1-5R-qY1"/>
+                                        <constraint firstItem="GYI-Iv-ICZ" firstAttribute="top" secondItem="UWm-Y5-9jx" secondAttribute="top" constant="14" id="RFM-v4-uNz"/>
+                                        <constraint firstItem="QIO-iZ-jIv" firstAttribute="leading" secondItem="GYI-Iv-ICZ" secondAttribute="trailing" constant="29" id="Vci-ka-hm9"/>
+                                        <constraint firstAttribute="bottom" secondItem="GYI-Iv-ICZ" secondAttribute="bottom" constant="14.5" id="Vjg-ee-98i"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="lZP-G4-pLq" secondAttribute="bottom" constant="4" id="kFP-Td-ThS"/>
+                                        <constraint firstItem="GYI-Iv-ICZ" firstAttribute="leading" secondItem="UWm-Y5-9jx" secondAttribute="leading" constant="10" id="wUc-bq-mR8"/>
+                                        <constraint firstItem="QIO-iZ-jIv" firstAttribute="top" secondItem="ygU-YK-NpV" secondAttribute="bottom" constant="7" id="xG6-Cm-lyA"/>
+                                        <constraint firstItem="ygU-YK-NpV" firstAttribute="top" secondItem="UWm-Y5-9jx" secondAttribute="topMargin" constant="3" id="zao-Zt-eRu"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionText" destination="QIO-iZ-jIv" id="085-Ih-KMX"/>
+                                    <outlet property="genderText" destination="lZP-G4-pLq" id="xUx-np-iG9"/>
+                                    <outlet property="titleText" destination="ygU-YK-NpV" id="NIZ-40-f7d"/>
+                                    <outlet property="tumb" destination="GYI-Iv-ICZ" id="iey-0J-UR2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -39,7 +83,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9r7-FC-8Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676" y="-83"/>
+            <point key="canvasLocation" x="676" y="-125.4872563718141"/>
         </scene>
         <!--Voti-->
         <scene sceneID="2t6-Zw-6OM">
