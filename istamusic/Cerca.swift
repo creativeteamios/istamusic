@@ -10,14 +10,24 @@ import UIKit
 
 class Cerca: UITableViewController, UISearchResultsUpdating {
     
-    // TODO : Creare DB di gruppi
-    //uso l'array di ristoranti, in attesa di un nostro db
-    var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "PetiteOyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats", "Waffle &Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "RoyalOak", "CASK Pub and Kitchen"]
+    var searchController: UISearchController!
     
     
     //aggiorna i risulati della ricerca
     func updateSearchResults(for searchController: UISearchController) {
-        <#code#>
+        if let searchText = searchController.searchBar.text{
+            filterContent(for: searchText)
+        }
+    }
+    
+    func filterContent(for searchText: String ){
+        /*searchResult = restaurants.filter({(restaurant) -> Bool in
+            if let name = restaurant.name{
+                let isMatch = name.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            return false
+        })*/
     }
     
 
@@ -29,29 +39,40 @@ class Cerca: UITableViewController, UISearchResultsUpdating {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchController = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = searchController.searchBar
+        
+        // la funzione che si opccupa di fare la ricerca sta nel controller
+        searchController.searchResultsUpdater = self
+        //con questo nessuno può modificare i dati prensenti nella tabella
+        searchController.dimsBackgroundDuringPresentation = false
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 10
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dataCellCerca", for: indexPath) as! TableSingleCellCerca
         // Configure the cell...
-
+        cell.titleText.text = "titolo"
+        cell.descriptionText.text = "band Carina"
+        cell.genderText.text = "ROCK, POP"
+        cell.tumb.image = UIImage(named: "immagine-anteprima-corso-2")
+        cell.tumb.layer.cornerRadius = cell.tumb.frame.size.width / 2
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
