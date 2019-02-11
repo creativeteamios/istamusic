@@ -19,7 +19,7 @@ class CercaView: UITableViewController, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text{
             //testo cercato
-            print(searchText)
+            //print(searchText)
             
             //codice per filtrare il cerca
             filterContent(for: searchText)

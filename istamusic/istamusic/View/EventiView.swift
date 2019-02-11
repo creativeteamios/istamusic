@@ -7,14 +7,60 @@
 //
 
 import UIKit
+import MapKit
 
-class EventiView: UIViewController {
+class EventiView: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate {
 
+    @IBOutlet weak var mappaEventi: MKMapView!
+    var annotation = MKPointAnnotation()
+    let geoCoder = CLGeocoder()
+    var provincia: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Customize the map view
+        mappaEventi.delegate = self
+        mappaEventi.showsCompass = true
+        mappaEventi.showsScale = true
+        mappaEventi.showsTraffic = true
+        
+        //controllo delle gesture sulla mappa
+        let gestureRecognized = UITapGestureRecognizer(target: self, action:#selector(handleTap))
+        gestureRecognized.delegate = self
+        mappaEventi.addGestureRecognizer(gestureRecognized)
     }
+    
+    @objc func handleTap(gestureReconizer: UILongPressGestureRecognizer) {
+        
+        let location = gestureReconizer.location(in: mappaEventi)
+        let coordinate = mappaEventi.convert(location,toCoordinateFrom: mappaEventi)
+        
+        // Add annotation:
+        annotation.coordinate = coordinate
+        mappaEventi.addAnnotation(annotation)
+        
+        
+        // Look up the location and pass it to the completion handler
+        let center = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        geoCoder.reverseGeocodeLocation(center,
+                                        completionHandler: { (placemarks, error) in
+                                            if error == nil {
+                                                let firstLocation = placemarks?[0]
+                                                //Provincia
+                                                self.provincia = firstLocation?.subAdministrativeArea
+                                                //print(firstLocation?.subAdministrativeArea)
+                                                //completionHandler(center)
+                                            }
+                                            else {
+                                                // An error occurred during geocoding.
+                                                //completionHandler(nil)
+                                                print("Erore Localizzazione")
+                                            }
+        })
+    }
+
+    
     
 
     /*

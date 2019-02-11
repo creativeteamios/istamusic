@@ -168,6 +168,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mappaEventi" destination="Pus-qi-iSx" id="PcC-K6-T55"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttu-PC-RQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
