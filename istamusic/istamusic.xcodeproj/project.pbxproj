@@ -15,7 +15,7 @@
 		D14CB7C4220D7E0F0041012E /* istamusic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D14CB7C2220D7E0F0041012E /* istamusic.xcdatamodeld */; };
 		D14CB7C6220D7E0F0041012E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14CB7C5220D7E0F0041012E /* Assets.xcassets */; };
 		D14CB7C9220D7E0F0041012E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14CB7C7220D7E0F0041012E /* LaunchScreen.storyboard */; };
-		D1D1C4EF220F21E70050014B /* Cerca.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4EE220F21E70050014B /* Cerca.swift */; };
+		D1D1C4EF220F21E70050014B /* CercaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4EE220F21E70050014B /* CercaView.swift */; };
 		D1D1C4F1220F259D0050014B /* TableSingleCellCerca.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F0220F259D0050014B /* TableSingleCellCerca.swift */; };
 		D1D1C4F3220F2C4B0050014B /* Band.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F2220F2C4B0050014B /* Band.swift */; };
 		D1D1C4F5220F2E680050014B /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F4220F2E680050014B /* Evento.swift */; };
@@ -35,7 +35,7 @@
 		D14CB7C5220D7E0F0041012E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D14CB7C8220D7E0F0041012E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D14CB7CA220D7E0F0041012E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1D1C4EE220F21E70050014B /* Cerca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cerca.swift; path = ../Cerca.swift; sourceTree = "<group>"; };
+		D1D1C4EE220F21E70050014B /* CercaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CercaView.swift; sourceTree = "<group>"; };
 		D1D1C4F0220F259D0050014B /* TableSingleCellCerca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSingleCellCerca.swift; sourceTree = "<group>"; };
 		D1D1C4F2220F2C4B0050014B /* Band.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Band.swift; sourceTree = "<group>"; };
 		D1D1C4F4220F2E680050014B /* Evento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
@@ -74,6 +74,9 @@
 		D14CB7BA220D7E0F0041012E /* istamusic */ = {
 			isa = PBXGroup;
 			children = (
+				D1D1C4FF22119B3E0050014B /* Core Class */,
+				D1D1C4FE22119B2F0050014B /* Single cell */,
+				D1D1C4FD22119A560050014B /* View */,
 				D1D1C4F822107ED30050014B /* Fake Database */,
 				D14CB7BB220D7E0F0041012E /* AppDelegate.swift */,
 				D14CB7BD220D7E0F0041012E /* ViewController.swift */,
@@ -82,14 +85,6 @@
 				D14CB7C7220D7E0F0041012E /* LaunchScreen.storyboard */,
 				D14CB7CA220D7E0F0041012E /* Info.plist */,
 				D14CB7C2220D7E0F0041012E /* istamusic.xcdatamodeld */,
-				D1D1C4F0220F259D0050014B /* TableSingleCellCerca.swift */,
-				D1D1C4EE220F21E70050014B /* Cerca.swift */,
-				D1D1C4F2220F2C4B0050014B /* Band.swift */,
-				D1D1C4F4220F2E680050014B /* Evento.swift */,
-				D1D1C4FB221191F80050014B /* EventiView.swift */,
-				D1D1C4F6220F2EBE0050014B /* Recensione.swift */,
-				D1481EFD220E177600879172 /* RegistratiView.swift */,
-				D1481EF8220E06F000879172 /* LoginView.swift */,
 			);
 			path = istamusic;
 			sourceTree = "<group>";
@@ -100,6 +95,35 @@
 				D1D1C4F922107EF50050014B /* DataBase.swift */,
 			);
 			path = "Fake Database";
+			sourceTree = "<group>";
+		};
+		D1D1C4FD22119A560050014B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1D1C4FB221191F80050014B /* EventiView.swift */,
+				D1481EFD220E177600879172 /* RegistratiView.swift */,
+				D1481EF8220E06F000879172 /* LoginView.swift */,
+				D1D1C4EE220F21E70050014B /* CercaView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1D1C4FE22119B2F0050014B /* Single cell */ = {
+			isa = PBXGroup;
+			children = (
+				D1D1C4F0220F259D0050014B /* TableSingleCellCerca.swift */,
+			);
+			path = "Single cell";
+			sourceTree = "<group>";
+		};
+		D1D1C4FF22119B3E0050014B /* Core Class */ = {
+			isa = PBXGroup;
+			children = (
+				D1D1C4F2220F2C4B0050014B /* Band.swift */,
+				D1D1C4F4220F2E680050014B /* Evento.swift */,
+				D1D1C4F6220F2EBE0050014B /* Recensione.swift */,
+			);
+			path = "Core Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +201,7 @@
 				D1D1C4FC221191F80050014B /* EventiView.swift in Sources */,
 				D14CB7C4220D7E0F0041012E /* istamusic.xcdatamodeld in Sources */,
 				D1D1C4F3220F2C4B0050014B /* Band.swift in Sources */,
-				D1D1C4EF220F21E70050014B /* Cerca.swift in Sources */,
+				D1D1C4EF220F21E70050014B /* CercaView.swift in Sources */,
 				D14CB7BC220D7E0F0041012E /* AppDelegate.swift in Sources */,
 				D1481EF9220E06F000879172 /* LoginView.swift in Sources */,
 				D1D1C4FA22107EF50050014B /* DataBase.swift in Sources */,
