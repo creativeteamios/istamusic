@@ -105,7 +105,7 @@
         <!--Eventi-->
         <scene sceneID="B53-yl-OVp">
             <objects>
-                <viewController id="W6g-pu-hVe" sceneMemberID="viewController">
+                <viewController id="W6g-pu-hVe" customClass="EventiView" customModule="istamusic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pj5-H7-FK6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -260,7 +260,7 @@
         <!--Login-->
         <scene sceneID="kvw-YS-ud1">
             <objects>
-                <viewController title="Login" hidesBottomBarWhenPushed="YES" id="rII-w0-g0g" customClass="Login" customModule="istamusic" sceneMemberID="viewController">
+                <viewController title="Login" hidesBottomBarWhenPushed="YES" id="rII-w0-g0g" customClass="LoginView" customModule="istamusic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NdA-5j-seM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -420,7 +420,7 @@
         <!--Registrati-->
         <scene sceneID="0Ph-dq-Fda">
             <objects>
-                <viewController title="Registrati" hidesBottomBarWhenPushed="YES" id="cpt-wT-10q" customClass="Registrati" customModule="istamusic" sceneMemberID="viewController">
+                <viewController title="Registrati" hidesBottomBarWhenPushed="YES" id="cpt-wT-10q" customClass="RegistratiView" customModule="istamusic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eh0-6t-4D8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

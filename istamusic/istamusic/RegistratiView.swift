@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Registrati: UIViewController {
+class RegistratiView: UIViewController {
     
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var nometext: UITextField!
