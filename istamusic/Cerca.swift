@@ -11,24 +11,32 @@ import UIKit
 class Cerca: UITableViewController, UISearchResultsUpdating {
     
     var searchController: UISearchController!
+    var searchResult = [Band]()
     var dataBase = Database()
     
     
     //aggiorna i risulati della ricerca
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text{
+            //testo cercato
+            print(searchText)
+            
+            //codice per filtrare il cerca
             filterContent(for: searchText)
+            tableView.reloadData()
         }
     }
     
     func filterContent(for searchText: String ){
-        /*searchResult = restaurants.filter({(restaurant) -> Bool in
-            if let name = restaurant.name{
-                let isMatch = name.localizedCaseInsensitiveContains(searchText)
-                return isMatch
+        
+        searchResult = dataBase.bands.filter({(band) -> Bool in
+            if(band.nomeGruppo?.localizedCaseInsensitiveContains(searchText) == true || band.genereMusicale?.localizedCaseInsensitiveContains(searchText) == true ||
+                band.location?.localizedCaseInsensitiveContains(searchText) == true){
+                //print("\(searchText) \(band.nomeGruppo!) \(band.genereMusicale)")
+                return true
             }
             return false
-        })*/
+        })
     }
     
 
@@ -61,17 +69,24 @@ class Cerca: UITableViewController, UISearchResultsUpdating {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dataBase.bands.count
+        if searchController.isActive{
+            return searchResult.count
+        }else{
+            return dataBase.bands.count
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataCellCerca", for: indexPath) as! TableSingleCellCerca
-        // Configure the cell...
-        cell.titleText.text = dataBase.bands[indexPath.row].nomeGruppo
-        cell.descriptionText.text = dataBase.bands[indexPath.row].descrizione
-        cell.genderText.text = dataBase.bands[indexPath.row].genereMusicale
-        cell.tumb.image = UIImage(named: dataBase.bands[indexPath.row].image!)
+        
+        var band = (searchController.isActive) ? searchResult[indexPath.row] : dataBase.bands[indexPath.row]
+        
+        // Configure the cell..
+        cell.titleText.text = band.nomeGruppo
+        cell.descriptionText.text = band.descrizione
+        cell.genderText.text = band.genereMusicale
+        cell.tumb.image = UIImage(named: band.image!)
         cell.tumb.layer.cornerRadius = cell.tumb.frame.size.width / 2
         
         return cell

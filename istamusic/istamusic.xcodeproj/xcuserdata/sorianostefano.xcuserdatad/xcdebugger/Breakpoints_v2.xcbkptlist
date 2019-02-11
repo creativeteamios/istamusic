@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "istamusic/TableSingleCellCerca.swift"
-            timestampString = "571491816.4212151"
+            timestampString = "571576103.851366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -19,14 +19,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "istamusic.TableSingleCellCerca.titleText.getter : weak Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "istamusic"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sorianostefano/Documents/git/istamusic/istamusic/istamusic/TableSingleCellCerca.swift"
-                  timestampString = "571491729.618755"
+                  timestampString = "571575614.575187"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -34,14 +34,14 @@
                   offsetFromSymbolStart = "86">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "istamusic.TableSingleCellCerca.titleText.setter : weak Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "istamusic"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sorianostefano/Documents/git/istamusic/istamusic/istamusic/TableSingleCellCerca.swift"
-                  timestampString = "571491729.620411"
+                  timestampString = "571575614.577108"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -49,14 +49,14 @@
                   offsetFromSymbolStart = "106">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "istamusic.TableSingleCellCerca.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; istamusic.TableSingleCellCerca"
                   moduleName = "istamusic"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sorianostefano/Documents/git/istamusic/istamusic/istamusic/TableSingleCellCerca.swift"
-                  timestampString = "571491729.622043"
+                  timestampString = "571575614.5789191"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -64,14 +64,14 @@
                   offsetFromSymbolStart = "186">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "istamusic.TableSingleCellCerca.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;istamusic.TableSingleCellCerca&gt;"
                   moduleName = "istamusic"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sorianostefano/Documents/git/istamusic/istamusic/istamusic/TableSingleCellCerca.swift"
-                  timestampString = "571491729.628708"
+                  timestampString = "571575614.580393"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -79,6 +79,22 @@
                   offsetFromSymbolStart = "157">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cerca.swift"
+            timestampString = "571576103.851436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "filterContent(for:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
