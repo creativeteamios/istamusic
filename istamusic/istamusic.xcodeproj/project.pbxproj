@@ -20,6 +20,7 @@
 		D1D1C4F3220F2C4B0050014B /* Band.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F2220F2C4B0050014B /* Band.swift */; };
 		D1D1C4F5220F2E680050014B /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F4220F2E680050014B /* Evento.swift */; };
 		D1D1C4F7220F2EBE0050014B /* Recensione.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F6220F2EBE0050014B /* Recensione.swift */; };
+		D1D1C4FA22107EF50050014B /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F922107EF50050014B /* DataBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D1D1C4F2220F2C4B0050014B /* Band.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Band.swift; sourceTree = "<group>"; };
 		D1D1C4F4220F2E680050014B /* Evento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
 		D1D1C4F6220F2EBE0050014B /* Recensione.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recensione.swift; sourceTree = "<group>"; };
+		D1D1C4F922107EF50050014B /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		D14CB7BA220D7E0F0041012E /* istamusic */ = {
 			isa = PBXGroup;
 			children = (
+				D1D1C4F822107ED30050014B /* Fake Database */,
 				D14CB7BB220D7E0F0041012E /* AppDelegate.swift */,
 				D14CB7BD220D7E0F0041012E /* ViewController.swift */,
 				D14CB7BF220D7E0F0041012E /* Main.storyboard */,
@@ -86,6 +89,14 @@
 				D1481EF8220E06F000879172 /* Login.swift */,
 			);
 			path = istamusic;
+			sourceTree = "<group>";
+		};
+		D1D1C4F822107ED30050014B /* Fake Database */ = {
+			isa = PBXGroup;
+			children = (
+				D1D1C4F922107EF50050014B /* DataBase.swift */,
+			);
+			path = "Fake Database";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				D1D1C4EF220F21E70050014B /* Cerca.swift in Sources */,
 				D14CB7BC220D7E0F0041012E /* AppDelegate.swift in Sources */,
 				D1481EF9220E06F000879172 /* Login.swift in Sources */,
+				D1D1C4FA22107EF50050014B /* DataBase.swift in Sources */,
 				D1D1C4F5220F2E680050014B /* Evento.swift in Sources */,
 				D1D1C4F1220F259D0050014B /* TableSingleCellCerca.swift in Sources */,
 				D1D1C4F7220F2EBE0050014B /* Recensione.swift in Sources */,

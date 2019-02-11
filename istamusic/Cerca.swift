@@ -11,6 +11,7 @@ import UIKit
 class Cerca: UITableViewController, UISearchResultsUpdating {
     
     var searchController: UISearchController!
+    var dataBase = Database()
     
     
     //aggiorna i risulati della ricerca
@@ -36,6 +37,9 @@ class Cerca: UITableViewController, UISearchResultsUpdating {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        //carico il Db
+        dataBase.inizializza()
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -57,17 +61,17 @@ class Cerca: UITableViewController, UISearchResultsUpdating {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return dataBase.bands.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataCellCerca", for: indexPath) as! TableSingleCellCerca
         // Configure the cell...
-        cell.titleText.text = "titolo"
-        cell.descriptionText.text = "band Carina"
-        cell.genderText.text = "ROCK, POP"
-        cell.tumb.image = UIImage(named: "immagine-anteprima-corso-2")
+        cell.titleText.text = dataBase.bands[indexPath.row].nomeGruppo
+        cell.descriptionText.text = dataBase.bands[indexPath.row].descrizione
+        cell.genderText.text = dataBase.bands[indexPath.row].genereMusicale
+        cell.tumb.image = UIImage(named: dataBase.bands[indexPath.row].image!)
         cell.tumb.layer.cornerRadius = cell.tumb.frame.size.width / 2
         
         return cell

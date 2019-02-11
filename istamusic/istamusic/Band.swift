@@ -16,4 +16,5 @@ class Band{
     var descrizione: String?
     var genereMusicale: String?
     var recensioni = Recensione()
+    var image: String?
 }
