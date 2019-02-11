@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Cerca: UITableViewController, UISearchResultsUpdating {
+class CercaView: UITableViewController, UISearchResultsUpdating {
     
     var searchController: UISearchController!
     var searchResult = [Band]()
