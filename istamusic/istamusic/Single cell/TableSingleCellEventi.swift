@@ -14,6 +14,7 @@ class TableSingleCellEventi: UITableViewCell {
     @IBOutlet weak var titleEvento: UILabel!
     @IBOutlet weak var subTitleEvento: UILabel!
     @IBOutlet weak var genereEvento: UILabel!
+    @IBOutlet weak var imageMese: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

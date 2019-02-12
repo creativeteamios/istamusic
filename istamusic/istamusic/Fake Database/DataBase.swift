@@ -8,6 +8,8 @@
 
 import Foundation
 
+let dataBaseShared = Database()
+
 class Database{
     
     let imageBand = ["Alan Walker", "Daft Punk", "Fine Devices", "Ice-Angels 32", "Linkin Park", "Rattatta Music", "Red Hot Chili Peppers", "Rh Negativo", "Sia", "The Beatles", "Voiceless"]
@@ -27,32 +29,67 @@ class Database{
     let testiRecensioni = ["Mi piace molto questa musica", "Ottima band, bel sound", "Serata fantastica, spero di ritornarci", "Per come era stata sponsorizzata la serata mi aspettavo di meglio", "La band è promettente ma la strumentazione è ancora insufficiente", "E' diventata la mia band preferita", "Bel sound ma cambiate il cantante quanto prima", "Mi piace molto questa band"]
     let votiRecensioni = [4,4,5,2,3,5,3,4]
     let titoliRecensioni = ["Soddisfatto","Grande band","Il massimo!","C'è di meglio","Non il massimo","Il massimo!","Serata ok", "Divertito"]
+    let indirizziEventi = ["Benevento", "Avellino"]
+    let tag = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+    var dateEventoDate = [Date]()
     
+    init(){
+        inizializza()
+    }
     
-    
-    
+    //lista eventi
     var eventiaaa = [Evento]()
     func inizializzaEvento(){
-        
+        creaArrayDate()
         for index in 0..<11{
             let ev = Evento()
             let ev2 = Evento()
             ev.nomeEvento = "\(imageBand[index]) Live Music"
             ev2.nomeEvento = "\(imageBand[index]) Live Music"
-            ev.dataEvento = dateEvento[index]
-            ev2.dataEvento = dateEvento[index+11]
+            ev.dataEvento = dateEventoDate[index]
+            ev2.dataEvento = dateEventoDate[index+11]
             ev.numeroPartecipanti = numeriPartecipanti[index]
             ev2.numeroPartecipanti = numeriPartecipanti[index+11]
             ev.descrizioneEvento = descrizioniEventi[index]
             ev2.descrizioneEvento = descrizioniEventi[index+11]
+            ev.indirizzoEvento = indirizziEventi[0]
+            ev2.indirizzoEvento = indirizziEventi[1]
+            ev.tagBand = "\(index+1)"
+            ev2.tagBand = "\(index+1)"
             eventiaaa.append(ev)
             eventiaaa.append(ev2)
-            
-            
-            
-            
-            
         }
+        
+        ordinaEventiCrescente()
+        
+    }
+    
+    func ordinaEventiCrescente(){
+        
+        
+        for index in 0..<eventiaaa.count{
+            for indexb in 0..<eventiaaa.count{
+                if(eventiaaa[index].dataEvento?.compare(eventiaaa[indexb].dataEvento!).rawValue == -1){
+                    let tmp = eventiaaa[index]
+                    eventiaaa[index] = eventiaaa[indexb]
+                    eventiaaa[indexb] = tmp
+                }
+            }
+        }
+    }
+    
+    func creaArrayDate(){
+        for evento in dateEvento{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyy"
+            let tmpData = dateFormatter.date(from: evento)
+            dateEventoDate.append(tmpData!)
+        }
+        
+    }
+    
+    func creaOggettiTipoDate(){
+        
     }
     
     
@@ -90,12 +127,13 @@ class Database{
             tmp.location = locations[index]
             tmp.descrizione = descrizioni[index]
             tmp.follower = followers[index]
+            tmp.tag = "\(index+1)"
             tmp.eventi.append(eventiaaa[contatore])
             //print(contatore)
             contatore = contatore + 1
             tmp.eventi.append(eventiaaa[contatore])
             contatore = contatore + 1
-            print(recensioniii.count)
+            //print(recensioniii.count)
             tmp.recensioni.append(recensioniii.randomElement()!)
             tmp.recensioni.append(recensioniii.randomElement()!)
             

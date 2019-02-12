@@ -9,8 +9,10 @@
 import Foundation
 
 class Evento{
-    var dataEvento: String?
+    var dataEvento: Date?
     var nomeEvento: String?
     var numeroPartecipanti: Int?
     var descrizioneEvento: String?
+    var tagBand: String?
+    var indirizzoEvento: String?
 }

@@ -12,7 +12,6 @@ class CercaView: UITableViewController, UISearchResultsUpdating {
     
     var searchController: UISearchController!
     var searchResult = [Band]()
-    var dataBase = Database()
     
     
     //aggiorna i risulati della ricerca
@@ -29,7 +28,7 @@ class CercaView: UITableViewController, UISearchResultsUpdating {
     
     func filterContent(for searchText: String ){
         
-        searchResult = dataBase.bands.filter({(band) -> Bool in
+        searchResult = dataBaseShared.bands.filter({(band) -> Bool in
             if(band.nomeGruppo?.localizedCaseInsensitiveContains(searchText) == true || band.genereMusicale?.localizedCaseInsensitiveContains(searchText) == true ||
                 band.location?.localizedCaseInsensitiveContains(searchText) == true){
                 //print("\(searchText) \(band.nomeGruppo!) \(band.genereMusicale)")
@@ -45,9 +44,6 @@ class CercaView: UITableViewController, UISearchResultsUpdating {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
-        //carico il Db
-        dataBase.inizializza()
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -72,7 +68,7 @@ class CercaView: UITableViewController, UISearchResultsUpdating {
         if searchController.isActive{
             return searchResult.count
         }else{
-            return dataBase.bands.count
+            return dataBaseShared.bands.count
         }
     }
 
@@ -80,7 +76,7 @@ class CercaView: UITableViewController, UISearchResultsUpdating {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataCellCerca", for: indexPath) as! TableSingleCellCerca
         
-        var band = (searchController.isActive) ? searchResult[indexPath.row] : dataBase.bands[indexPath.row]
+        var band = (searchController.isActive) ? searchResult[indexPath.row] : dataBaseShared.bands[indexPath.row]
         
         // Configure the cell..
         cell.titleText.text = band.nomeGruppo
