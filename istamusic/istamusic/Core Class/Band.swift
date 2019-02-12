@@ -12,9 +12,9 @@ class Band{
     var nomeGruppo: String?
     var location: String?
     var follower: Int?
-    var eventi = Evento()
+    var eventi = [Evento]()
     var descrizione: String?
     var genereMusicale: String?
-    var recensioni = Recensione()
+    var recensioni = [Recensione]()
     var image: String?
 }

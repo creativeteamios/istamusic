@@ -12,4 +12,5 @@ class Recensione{
     var nomePersona: String?
     var recensionetext: String?
     var votoRecensione: Int?
+    var titoloRecensione: String?
 }
