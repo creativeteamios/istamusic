@@ -9,9 +9,12 @@
 import UIKit
 import MapKit
 
-class EventiView: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate {
-
+class EventiView: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var mappaEventi: MKMapView!
+    @IBOutlet weak var tableEventi: UITableView!
+    
+    
     var annotation = MKPointAnnotation()
     let geoCoder = CLGeocoder()
     var provincia: String?
@@ -30,7 +33,7 @@ class EventiView: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelega
         gestureRecognized.delegate = self
         mappaEventi.addGestureRecognizer(gestureRecognized)
     }
-    
+    //gestione tab sulla mappa
     @objc func handleTap(gestureReconizer: UILongPressGestureRecognizer) {
         
         let location = gestureReconizer.location(in: mappaEventi)
@@ -60,9 +63,16 @@ class EventiView: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelega
         })
     }
 
+    //Gestione Table
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
     
-    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 
+    
     /*
     // MARK: - Navigation
 

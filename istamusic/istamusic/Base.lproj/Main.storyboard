@@ -116,45 +116,107 @@
                                     <constraint firstAttribute="height" constant="193" id="ZQ3-9b-Aby"/>
                                 </constraints>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eventi in programma oggi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yj5-za-fFw">
-                                <rect key="frame" x="16" y="284" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tc0-Wk-v6O">
-                                <rect key="frame" x="0.0" y="327" width="380" height="291"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tc0-Wk-v6O">
+                                <rect key="frame" x="0.0" y="266" width="375" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XBB-dN-mn2">
-                                        <rect key="frame" x="0.0" y="28" width="380" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="34" id="XBB-dN-mn2" customClass="TableSingleGiornoEventi" customModule="istamusic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XBB-dN-mn2" id="Sfx-ff-Oxt">
-                                            <rect key="frame" x="0.0" y="0.0" width="380" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="33.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eventi in programma oggi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovu-1V-KsG">
+                                                    <rect key="frame" x="0.0" y="6" width="375" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ovu-1V-KsG" firstAttribute="leading" secondItem="Sfx-ff-Oxt" secondAttribute="leading" id="9Xe-7D-ZY7"/>
+                                                <constraint firstItem="ovu-1V-KsG" firstAttribute="top" secondItem="Sfx-ff-Oxt" secondAttribute="top" constant="6" id="H8G-XO-Wzp"/>
+                                                <constraint firstAttribute="trailing" secondItem="ovu-1V-KsG" secondAttribute="trailing" id="M5g-YA-NnE"/>
+                                                <constraint firstAttribute="bottom" secondItem="ovu-1V-KsG" secondAttribute="bottom" constant="6.5" id="jVr-wL-nDc"/>
+                                                <constraint firstAttribute="trailing" secondItem="ovu-1V-KsG" secondAttribute="trailing" id="vfg-v9-qkW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="singoloGiornoText" destination="ovu-1V-KsG" id="ycd-Bw-VAB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="81" id="dXa-uL-VBN" customClass="TableSingleCellEventi" customModule="istamusic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="62" width="375" height="81"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dXa-uL-VBN" id="7dL-HY-DaF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jQC-jG-aRA">
+                                                    <rect key="frame" x="15" y="13" width="55" height="55"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="Xit-2a-2eM"/>
+                                                        <constraint firstAttribute="height" constant="55" id="fHh-0W-EgE"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a31-52-MbW">
+                                                    <rect key="frame" x="84" y="11" width="103" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrizione evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSF-OM-0iJ">
+                                                    <rect key="frame" x="84" y="30" width="123.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genere musica evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boz-wa-gII">
+                                                    <rect key="frame" x="84" y="49" width="153" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RSF-OM-0iJ" firstAttribute="leading" secondItem="jQC-jG-aRA" secondAttribute="trailing" constant="14" id="2Hm-Au-T9X"/>
+                                                <constraint firstItem="boz-wa-gII" firstAttribute="top" secondItem="RSF-OM-0iJ" secondAttribute="bottom" constant="2" id="74u-fH-CIy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jQC-jG-aRA" secondAttribute="bottom" constant="2" id="CxQ-vt-8ug"/>
+                                                <constraint firstItem="jQC-jG-aRA" firstAttribute="leading" secondItem="7dL-HY-DaF" secondAttribute="leadingMargin" id="M07-X2-Lzf"/>
+                                                <constraint firstItem="RSF-OM-0iJ" firstAttribute="top" secondItem="7dL-HY-DaF" secondAttribute="topMargin" constant="19" id="MQr-zy-HJT"/>
+                                                <constraint firstItem="a31-52-MbW" firstAttribute="leading" secondItem="jQC-jG-aRA" secondAttribute="trailing" constant="14" id="OUL-1n-LB7"/>
+                                                <constraint firstItem="jQC-jG-aRA" firstAttribute="top" secondItem="7dL-HY-DaF" secondAttribute="topMargin" constant="2" id="T1S-jg-Q7l"/>
+                                                <constraint firstItem="boz-wa-gII" firstAttribute="leading" secondItem="jQC-jG-aRA" secondAttribute="trailing" constant="14" id="aUc-eA-pgo"/>
+                                                <constraint firstItem="a31-52-MbW" firstAttribute="top" secondItem="7dL-HY-DaF" secondAttribute="topMargin" id="zlN-Qb-8Yl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="genereEvento" destination="boz-wa-gII" id="1qy-Yn-2A6"/>
+                                            <outlet property="imageEvento" destination="jQC-jG-aRA" id="Ed4-fh-iEo"/>
+                                            <outlet property="subTitleEvento" destination="RSF-OM-0iJ" id="W0q-j0-yds"/>
+                                            <outlet property="titleEvento" destination="a31-52-MbW" id="Lri-dd-PnI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="SpF-MR-jxs">
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="SpF-MR-jxs">
                                 <rect key="frame" x="0.0" y="266" width="375" height="37"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tc0-Wk-v6O" firstAttribute="top" secondItem="SpF-MR-jxs" secondAttribute="bottom" constant="24" id="1fn-XO-LAr"/>
                             <constraint firstItem="oHj-qN-dMU" firstAttribute="trailing" secondItem="SpF-MR-jxs" secondAttribute="trailing" id="5Nb-rX-tbK"/>
                             <constraint firstItem="Pus-qi-iSx" firstAttribute="trailing" secondItem="oHj-qN-dMU" secondAttribute="trailing" id="69K-nB-GFZ"/>
                             <constraint firstItem="Pus-qi-iSx" firstAttribute="leading" secondItem="oHj-qN-dMU" secondAttribute="leading" id="7Lq-Be-ggh"/>
-                            <constraint firstItem="oHj-qN-dMU" firstAttribute="trailing" secondItem="yj5-za-fFw" secondAttribute="trailing" constant="164" id="CtL-Ya-LLc"/>
-                            <constraint firstItem="yj5-za-fFw" firstAttribute="top" secondItem="Pus-qi-iSx" secondAttribute="bottom" constant="27" id="Irh-xN-dpR"/>
                             <constraint firstItem="Pus-qi-iSx" firstAttribute="top" secondItem="oHj-qN-dMU" secondAttribute="top" id="LvR-EV-FjM"/>
+                            <constraint firstAttribute="trailing" secondItem="tc0-Wk-v6O" secondAttribute="trailing" id="Ohx-7E-3CM"/>
                             <constraint firstItem="SpF-MR-jxs" firstAttribute="leading" secondItem="oHj-qN-dMU" secondAttribute="leading" id="dNE-u6-4Wc"/>
-                            <constraint firstItem="tc0-Wk-v6O" firstAttribute="top" secondItem="yj5-za-fFw" secondAttribute="bottom" constant="22" id="fAR-88-gTU"/>
                             <constraint firstItem="tc0-Wk-v6O" firstAttribute="bottom" secondItem="oHj-qN-dMU" secondAttribute="bottom" id="klN-Do-eQv"/>
                             <constraint firstAttribute="trailing" secondItem="tc0-Wk-v6O" secondAttribute="trailing" constant="-5" id="rex-Rm-Dej"/>
                             <constraint firstItem="tc0-Wk-v6O" firstAttribute="leading" secondItem="oHj-qN-dMU" secondAttribute="leading" id="sLb-Xa-EOv"/>
-                            <constraint firstItem="yj5-za-fFw" firstAttribute="leading" secondItem="oHj-qN-dMU" secondAttribute="leading" constant="16" id="vwq-gl-nGL"/>
+                            <constraint firstItem="tc0-Wk-v6O" firstAttribute="top" secondItem="Pus-qi-iSx" secondAttribute="bottom" constant="9" id="wN4-AU-iqY"/>
+                            <constraint firstItem="tc0-Wk-v6O" firstAttribute="leading" secondItem="oHj-qN-dMU" secondAttribute="leading" id="yvg-9t-94O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oHj-qN-dMU"/>
                     </view>
@@ -170,6 +232,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mappaEventi" destination="Pus-qi-iSx" id="PcC-K6-T55"/>
+                        <outlet property="tableEventi" destination="tc0-Wk-v6O" id="KtQ-DU-wnq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttu-PC-RQF" userLabel="First Responder" sceneMemberID="firstResponder"/>

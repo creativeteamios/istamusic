@@ -22,6 +22,8 @@
 		D1D1C4F7220F2EBE0050014B /* Recensione.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F6220F2EBE0050014B /* Recensione.swift */; };
 		D1D1C4FA22107EF50050014B /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F922107EF50050014B /* DataBase.swift */; };
 		D1D1C4FC221191F80050014B /* EventiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4FB221191F80050014B /* EventiView.swift */; };
+		D1D1C50C2211F29E0050014B /* TableSingleGiornoEventi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C50B2211F29E0050014B /* TableSingleGiornoEventi.swift */; };
+		D1D1C50E2211F2C30050014B /* TableSingleCellEventi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C50D2211F2C30050014B /* TableSingleCellEventi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		D1D1C4F6220F2EBE0050014B /* Recensione.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recensione.swift; sourceTree = "<group>"; };
 		D1D1C4F922107EF50050014B /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		D1D1C4FB221191F80050014B /* EventiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventiView.swift; sourceTree = "<group>"; };
+		D1D1C50B2211F29E0050014B /* TableSingleGiornoEventi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSingleGiornoEventi.swift; sourceTree = "<group>"; };
+		D1D1C50D2211F2C30050014B /* TableSingleCellEventi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSingleCellEventi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				D1D1C4F0220F259D0050014B /* TableSingleCellCerca.swift */,
+				D1D1C50B2211F29E0050014B /* TableSingleGiornoEventi.swift */,
+				D1D1C50D2211F2C30050014B /* TableSingleCellEventi.swift */,
 			);
 			path = "Single cell";
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 				D1D1C4F3220F2C4B0050014B /* Band.swift in Sources */,
 				D1D1C4EF220F21E70050014B /* CercaView.swift in Sources */,
 				D14CB7BC220D7E0F0041012E /* AppDelegate.swift in Sources */,
+				D1D1C50C2211F29E0050014B /* TableSingleGiornoEventi.swift in Sources */,
+				D1D1C50E2211F2C30050014B /* TableSingleCellEventi.swift in Sources */,
 				D1481EF9220E06F000879172 /* LoginView.swift in Sources */,
 				D1D1C4FA22107EF50050014B /* DataBase.swift in Sources */,
 				D1D1C4F5220F2E680050014B /* Evento.swift in Sources */,
