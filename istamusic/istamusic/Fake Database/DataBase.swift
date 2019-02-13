@@ -12,7 +12,7 @@ let dataBaseShared = Database()
 
 class Database{
     
-    let imageBand = ["Alan Walker", "Daft Punk", "Fine Devices", "Ice-Angels 32", "Linkin Park", "Rattatta Music", "Red Hot Chili Peppers", "Rh Negativo", "Sia", "The Beatles", "Voiceless"]
+    let imageBand = ["Alan Walker", "Daft Punk", "Fine Devices", "Ice-Angels 32", "Linkin Park", "Rattatta", "Red Hot Chili Peppers", "Rh Negativo", "Sia", "The Beatles", "Voiceless"]
     var bands : [Band] = []
     
     let generiMusicali = ["House", "French House", "Alternative Rock", "Alternative Rock, Indie Rock", "Alternative Rock, Rap Rock", "Rap, Trap", "Alternative Rock, Funk Rock", "Pop Rock, Pop", "Pop, Indie Pop", "Rock, Beat", "Acoustic Pop" ]
