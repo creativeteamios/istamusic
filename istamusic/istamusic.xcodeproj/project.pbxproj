@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		834F5F3E221571740077326C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F5F3D221571740077326C /* MapView.swift */; };
 		D1481EF9220E06F000879172 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1481EF8220E06F000879172 /* LoginView.swift */; };
 		D1481EFE220E177600879172 /* RegistratiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1481EFD220E177600879172 /* RegistratiView.swift */; };
 		D14CB7BC220D7E0F0041012E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14CB7BB220D7E0F0041012E /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		834F5F3D221571740077326C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D1481EF8220E06F000879172 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D1481EFD220E177600879172 /* RegistratiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistratiView.swift; sourceTree = "<group>"; };
 		D14CB7B8220D7E0F0041012E /* istamusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = istamusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 				D1481EF8220E06F000879172 /* LoginView.swift */,
 				D1D1C4EE220F21E70050014B /* CercaView.swift */,
 				D1D1C5112214229F0050014B /* BandView.swift */,
+				834F5F3D221571740077326C /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				D1D1C50C2211F29E0050014B /* TableSingleGiornoEventi.swift in Sources */,
 				D1D1C50E2211F2C30050014B /* TableSingleCellEventi.swift in Sources */,
 				D1481EF9220E06F000879172 /* LoginView.swift in Sources */,
+				834F5F3E221571740077326C /* MapView.swift in Sources */,
 				D1D1C5122214229F0050014B /* BandView.swift in Sources */,
 				D1D1C4FA22107EF50050014B /* DataBase.swift in Sources */,
 				D1D1C4F5220F2E680050014B /* Evento.swift in Sources */,
@@ -371,13 +375,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5C7T94XW28;
+				DEVELOPMENT_TEAM = LP3HG3HFXW;
 				INFOPLIST_FILE = istamusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = creativeteam.istamusic;
+				PRODUCT_BUNDLE_IDENTIFIER = "umberto-mariniello";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,13 +393,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5C7T94XW28;
+				DEVELOPMENT_TEAM = LP3HG3HFXW;
 				INFOPLIST_FILE = istamusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = creativeteam.istamusic;
+				PRODUCT_BUNDLE_IDENTIFIER = "umberto-mariniello";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

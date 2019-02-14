@@ -683,7 +683,7 @@
         <!--Mappa-->
         <scene sceneID="FLn-gK-o9R">
             <objects>
-                <viewController title="Mappa" hidesBottomBarWhenPushed="YES" id="Kpa-QS-C1g" sceneMemberID="viewController">
+                <viewController title="Mappa" hidesBottomBarWhenPushed="YES" id="Kpa-QS-C1g" customClass="MapView" customModule="istamusic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xNE-hw-704">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -702,10 +702,13 @@
                         <viewLayoutGuide key="safeArea" id="d6A-JF-g8n"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="rEp-3f-GO9" id="lIC-Gy-Szh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccr-oI-EC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614" y="-865"/>
+            <point key="canvasLocation" x="1613.5999999999999" y="-865.81709145427294"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Tsf-ec-boF">
@@ -859,6 +862,6 @@
         <image name="voti" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CHY-YO-ggY"/>
+        <segue reference="9A3-hd-tXl"/>
     </inferredMetricsTieBreakers>
 </document>
