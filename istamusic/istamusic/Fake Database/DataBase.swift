@@ -35,6 +35,7 @@ class Database{
     
     init(){
         inizializza()
+        ordinaEventiCrescente()
     }
     
     //lista eventi
@@ -60,8 +61,16 @@ class Database{
             eventiaaa.append(ev2)
         }
         
-        ordinaEventiCrescente()
-        
+    }
+    
+    func bandFromTag(tag: String) -> Band{
+        let tmp = Band()
+        for band in bands{
+            if(band.tag?.localizedCaseInsensitiveContains(tag) == true){
+                return band
+            }
+        }
+        return tmp
     }
     
     func ordinaEventiCrescente(){
@@ -128,12 +137,18 @@ class Database{
             tmp.descrizione = descrizioni[index]
             tmp.follower = followers[index]
             tmp.tag = "\(index+1)"
+            //print("contatore \(index+1)")
+            
+            
             tmp.eventi.append(eventiaaa[contatore])
-            //print(contatore)
+            //print(eventiaaa[contatore].tagBand)
             contatore = contatore + 1
             tmp.eventi.append(eventiaaa[contatore])
+            //print(eventiaaa[contatore].tagBand)
             contatore = contatore + 1
             //print(recensioniii.count)
+            
+            
             tmp.recensioni.append(recensioniii.randomElement()!)
             tmp.recensioni.append(recensioniii.randomElement()!)
             

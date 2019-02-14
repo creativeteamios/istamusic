@@ -145,14 +145,25 @@ class EventiView: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelega
     }
 
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "segueEventi"{
+            if let indexPath = tableEventi.indexPathForSelectedRow{
+                let destinationController = segue.destination as! DettaglioBandView
+                
+                let tag = (mappaActive) ? locationResul[indexPath.row-1].tagBand : dataBaseShared.eventiaaa[indexPath.row-1].tagBand
+                
+                destinationController.recivedTag = tag!
+                
+            }
+        }
     }
-    */
+    
 
 }

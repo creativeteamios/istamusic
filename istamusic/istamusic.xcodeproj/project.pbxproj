@@ -27,6 +27,8 @@
 		D1D1C50E2211F2C30050014B /* TableSingleCellEventi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C50D2211F2C30050014B /* TableSingleCellEventi.swift */; };
 		D1D1C510221421A40050014B /* CollectionViewSingleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C50F221421A40050014B /* CollectionViewSingleCell.swift */; };
 		D1D1C5122214229F0050014B /* BandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C5112214229F0050014B /* BandView.swift */; };
+		D1DE7F462215651100F61556 /* DettaglioBandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE7F452215651100F61556 /* DettaglioBandView.swift */; };
+		D1DE7F482215A89D00F61556 /* TableSingleCellRecensioni.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE7F472215A89D00F61556 /* TableSingleCellRecensioni.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		D1D1C50D2211F2C30050014B /* TableSingleCellEventi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSingleCellEventi.swift; sourceTree = "<group>"; };
 		D1D1C50F221421A40050014B /* CollectionViewSingleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSingleCell.swift; sourceTree = "<group>"; };
 		D1D1C5112214229F0050014B /* BandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandView.swift; sourceTree = "<group>"; };
+		D1DE7F452215651100F61556 /* DettaglioBandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettaglioBandView.swift; sourceTree = "<group>"; };
+		D1DE7F472215A89D00F61556 /* TableSingleCellRecensioni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSingleCellRecensioni.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				D1D1C4EE220F21E70050014B /* CercaView.swift */,
 				D1D1C5112214229F0050014B /* BandView.swift */,
 				834F5F3D221571740077326C /* MapView.swift */,
+				D1DE7F452215651100F61556 /* DettaglioBandView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 				D1D1C50B2211F29E0050014B /* TableSingleGiornoEventi.swift */,
 				D1D1C50D2211F2C30050014B /* TableSingleCellEventi.swift */,
 				D1D1C50F221421A40050014B /* CollectionViewSingleCell.swift */,
+				D1DE7F472215A89D00F61556 /* TableSingleCellRecensioni.swift */,
 			);
 			path = "Single cell";
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D14CB7BE220D7E0F0041012E /* ViewController.swift in Sources */,
+				D1DE7F462215651100F61556 /* DettaglioBandView.swift in Sources */,
 				D1D1C4FC221191F80050014B /* EventiView.swift in Sources */,
 				D14CB7C4220D7E0F0041012E /* istamusic.xcdatamodeld in Sources */,
 				D1D1C4F3220F2C4B0050014B /* Band.swift in Sources */,
@@ -223,6 +230,7 @@
 				D1481EF9220E06F000879172 /* LoginView.swift in Sources */,
 				834F5F3E221571740077326C /* MapView.swift in Sources */,
 				D1D1C5122214229F0050014B /* BandView.swift in Sources */,
+				D1DE7F482215A89D00F61556 /* TableSingleCellRecensioni.swift in Sources */,
 				D1D1C4FA22107EF50050014B /* DataBase.swift in Sources */,
 				D1D1C4F5220F2E680050014B /* Evento.swift in Sources */,
 				D1D1C4F1220F259D0050014B /* TableSingleCellCerca.swift in Sources */,
