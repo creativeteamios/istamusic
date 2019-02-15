@@ -149,13 +149,6 @@
                                                     <action selector="segui:" destination="e2Y-0V-uD6" eventType="touchUpInside" id="sNz-YR-3Qw"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gX-fl-Qoe">
-                                                <rect key="frame" x="157" y="359" width="60" height="30"/>
-                                                <state key="normal" title="Contatta"/>
-                                                <connections>
-                                                    <action selector="contatta:" destination="e2Y-0V-uD6" eventType="touchUpInside" id="B7S-dF-B0B"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eventi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-oQ-ZAH">
                                                 <rect key="frame" x="22" y="430" width="47" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -370,6 +363,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="scriviRecesione:" destination="e2Y-0V-uD6" eventType="touchUpInside" id="aQL-3g-wae"/>
+                                                    <segue destination="n7h-is-vQe" kind="show" id="KWD-de-Gb6"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -388,7 +382,6 @@
                                             <constraint firstItem="2wK-YU-VE5" firstAttribute="leading" secondItem="M3c-90-vBd" secondAttribute="leading" id="KH7-NI-DCF"/>
                                             <constraint firstItem="Q2I-Na-TTo" firstAttribute="leading" secondItem="M3c-90-vBd" secondAttribute="leading" constant="10" id="KUQ-Pj-Uf0"/>
                                             <constraint firstItem="plf-2u-rMj" firstAttribute="leading" secondItem="M3c-90-vBd" secondAttribute="leading" constant="22" id="Lmr-S0-2ej"/>
-                                            <constraint firstItem="1gX-fl-Qoe" firstAttribute="top" secondItem="o7n-bd-Mly" secondAttribute="bottom" constant="79" id="MM1-Pv-C75"/>
                                             <constraint firstItem="WL3-4Q-aKt" firstAttribute="leading" secondItem="M3c-90-vBd" secondAttribute="leading" constant="20" id="Muy-i7-Xg2"/>
                                             <constraint firstItem="1TB-Rh-od2" firstAttribute="leading" secondItem="M3c-90-vBd" secondAttribute="leading" constant="22" id="NHj-v0-GSd"/>
                                             <constraint firstItem="o7n-bd-Mly" firstAttribute="top" secondItem="M3c-90-vBd" secondAttribute="top" id="OMD-36-Wzh"/>
@@ -410,7 +403,6 @@
                                             <constraint firstItem="o7n-bd-Mly" firstAttribute="leading" secondItem="M3c-90-vBd" secondAttribute="leading" id="sZy-gb-BoJ"/>
                                             <constraint firstAttribute="height" constant="1442" id="vUA-zp-jD8"/>
                                             <constraint firstItem="5sl-Jy-scv" firstAttribute="top" secondItem="o7n-bd-Mly" secondAttribute="bottom" constant="19" id="wCJ-Dz-wat"/>
-                                            <constraint firstItem="BXf-x3-c9m" firstAttribute="leading" secondItem="1gX-fl-Qoe" secondAttribute="trailing" constant="85" id="xoz-of-AnC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -450,6 +442,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkd-i4-oo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1805.5999999999999" y="293.25337331334333"/>
+        </scene>
+        <!--Scrivi Recensione-->
+        <scene sceneID="rJD-rA-aqo">
+            <objects>
+                <viewController title="Scrivi Recensione" id="n7h-is-vQe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vzw-rj-LMf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EAj-LG-mRo">
+                                <rect key="frame" x="69" y="102" width="236" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ttiolo Recensione" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rRe-rK-fCY">
+                                <rect key="frame" x="69" y="154" width="236" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Inserisci recensione..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YTt-vC-tQY">
+                                <rect key="frame" x="16" y="281" width="343" height="247"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="247" id="y8A-TF-ldr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Voto 1-5" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7gq-e2-eGb">
+                                <rect key="frame" x="69" y="208" width="236" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rRe-rK-fCY" firstAttribute="top" secondItem="EAj-LG-mRo" secondAttribute="bottom" constant="22" id="7AD-NR-ULL"/>
+                            <constraint firstItem="YTt-vC-tQY" firstAttribute="top" secondItem="7gq-e2-eGb" secondAttribute="bottom" constant="43" id="7DD-09-fO0"/>
+                            <constraint firstItem="Tdc-qe-iIC" firstAttribute="trailing" secondItem="7gq-e2-eGb" secondAttribute="trailing" constant="70" id="8EV-Rk-0n3"/>
+                            <constraint firstItem="rRe-rK-fCY" firstAttribute="leading" secondItem="Tdc-qe-iIC" secondAttribute="leading" constant="69" id="EPy-Wv-sD3"/>
+                            <constraint firstItem="7gq-e2-eGb" firstAttribute="leading" secondItem="Tdc-qe-iIC" secondAttribute="leading" constant="69" id="Gb1-2x-2Lj"/>
+                            <constraint firstItem="YTt-vC-tQY" firstAttribute="leading" secondItem="Tdc-qe-iIC" secondAttribute="leading" constant="16" id="JYj-F1-m8T"/>
+                            <constraint firstItem="7gq-e2-eGb" firstAttribute="top" secondItem="rRe-rK-fCY" secondAttribute="bottom" constant="24" id="Z6o-fS-leh"/>
+                            <constraint firstItem="Tdc-qe-iIC" firstAttribute="trailing" secondItem="EAj-LG-mRo" secondAttribute="trailing" constant="70" id="cI7-ab-NqW"/>
+                            <constraint firstItem="EAj-LG-mRo" firstAttribute="leading" secondItem="Tdc-qe-iIC" secondAttribute="leading" constant="69" id="mvg-jF-fZl"/>
+                            <constraint firstItem="EAj-LG-mRo" firstAttribute="top" secondItem="Tdc-qe-iIC" secondAttribute="top" constant="38" id="qoR-XW-6GY"/>
+                            <constraint firstItem="Tdc-qe-iIC" firstAttribute="trailing" secondItem="YTt-vC-tQY" secondAttribute="trailing" constant="16" id="s5Q-EZ-lvb"/>
+                            <constraint firstItem="Tdc-qe-iIC" firstAttribute="trailing" secondItem="rRe-rK-fCY" secondAttribute="trailing" constant="70" id="wpG-Fo-Hkn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tdc-qe-iIC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scrivi Recensione" id="fez-NT-C23">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Hge-Vi-y5P">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OlF-FP-zvI">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Salva"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgn-Xy-KNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2918" y="619"/>
         </scene>
         <!--Eventi-->
         <scene sceneID="2t6-Zw-6OM">
@@ -604,7 +668,10 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="stJ-BZ-ERH">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Calendario"/>
+                                <state key="normal" title="Add Evento"/>
+                                <connections>
+                                    <segue destination="Qs5-7H-b3e" kind="show" id="qmf-BM-9PP"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -616,6 +683,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttu-PC-RQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="676" y="619.34032983508246"/>
+        </scene>
+        <!--Add Evento-->
+        <scene sceneID="L3K-lT-7Tn">
+            <objects>
+                <viewController title="Add Evento" hidesBottomBarWhenPushed="YES" id="Qs5-7H-b3e" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n9w-0G-1ZA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Evento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q2j-Jb-3nj">
+                                <rect key="frame" x="16" y="93" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ibN-Ra-aho"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="dd/MM/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NzD-Gg-d1r">
+                                <rect key="frame" x="16" y="131" width="116" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FhI-Rt-HyQ"/>
+                                    <constraint firstAttribute="width" constant="116" id="LSx-T8-L3d"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Indirizzo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUh-KH-hRm">
+                                <rect key="frame" x="156" y="131" width="203" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9qf-de-HIY"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTA-wv-Nqc">
+                                <rect key="frame" x="275" y="175" width="84" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="9Gd-oN-DQ5"/>
+                                </constraints>
+                                <state key="normal" title="Gruppo"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Aggiungi descrizione" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ORG-2C-H6m">
+                                <rect key="frame" x="16" y="250" width="343" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="kbf-BJ-gp9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ORG-2C-H6m" firstAttribute="leading" secondItem="4iA-fz-LRf" secondAttribute="leading" constant="16" id="BUA-v3-4hX"/>
+                            <constraint firstItem="NzD-Gg-d1r" firstAttribute="top" secondItem="q2j-Jb-3nj" secondAttribute="bottom" constant="8" id="ErS-8S-rkx"/>
+                            <constraint firstItem="xTA-wv-Nqc" firstAttribute="top" secondItem="FUh-KH-hRm" secondAttribute="bottom" constant="14" id="IaW-e9-a79"/>
+                            <constraint firstItem="FUh-KH-hRm" firstAttribute="top" secondItem="q2j-Jb-3nj" secondAttribute="bottom" constant="8" id="Icz-fd-0vK"/>
+                            <constraint firstItem="q2j-Jb-3nj" firstAttribute="leading" secondItem="4iA-fz-LRf" secondAttribute="leading" constant="16" id="aD3-4d-61d"/>
+                            <constraint firstItem="4iA-fz-LRf" firstAttribute="trailing" secondItem="ORG-2C-H6m" secondAttribute="trailing" constant="16" id="csJ-YA-fiC"/>
+                            <constraint firstItem="4iA-fz-LRf" firstAttribute="trailing" secondItem="FUh-KH-hRm" secondAttribute="trailing" constant="16" id="g3l-xP-aPc"/>
+                            <constraint firstItem="ORG-2C-H6m" firstAttribute="top" secondItem="xTA-wv-Nqc" secondAttribute="bottom" constant="45" id="gAb-DD-hd4"/>
+                            <constraint firstItem="4iA-fz-LRf" firstAttribute="trailing" secondItem="q2j-Jb-3nj" secondAttribute="trailing" constant="16" id="n87-mB-tyD"/>
+                            <constraint firstItem="FUh-KH-hRm" firstAttribute="leading" secondItem="NzD-Gg-d1r" secondAttribute="trailing" constant="24" id="nVg-Ez-Mv4"/>
+                            <constraint firstItem="q2j-Jb-3nj" firstAttribute="top" secondItem="4iA-fz-LRf" secondAttribute="top" constant="29" id="paN-Vo-jlJ"/>
+                            <constraint firstItem="NzD-Gg-d1r" firstAttribute="leading" secondItem="4iA-fz-LRf" secondAttribute="leading" constant="16" id="twa-eq-fcG"/>
+                            <constraint firstItem="4iA-fz-LRf" firstAttribute="trailing" secondItem="xTA-wv-Nqc" secondAttribute="trailing" constant="16" id="y4X-HL-YNe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4iA-fz-LRf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Aggiungi Evento" id="r12-mF-EAg">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="QDn-ME-h1b">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jyg-0A-Sw3">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Salva"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6N-ha-KVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="1438.8305847076463"/>
         </scene>
         <!--istamusic-->
         <scene sceneID="OHU-Pq-mo9">
@@ -692,20 +849,14 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF0-b8-CyU">
-                                <rect key="frame" x="170" y="73" width="116" height="30"/>
-                                <state key="normal" title="Aggiungi Gruppo"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lds-ei-WNn" firstAttribute="bottom" secondItem="mwB-Nx-hbE" secondAttribute="bottom" id="2qF-B7-CyL"/>
-                            <constraint firstItem="GF0-b8-CyU" firstAttribute="top" secondItem="mwB-Nx-hbE" secondAttribute="top" constant="9" id="Kif-hR-M5e"/>
                             <constraint firstItem="X8P-Y0-OUG" firstAttribute="top" secondItem="mwB-Nx-hbE" secondAttribute="top" constant="14" id="MUA-8G-7v8"/>
                             <constraint firstItem="mwB-Nx-hbE" firstAttribute="trailing" secondItem="br5-qa-703" secondAttribute="trailing" constant="34" id="SfH-Qp-24h"/>
                             <constraint firstAttribute="trailing" secondItem="Lds-ei-WNn" secondAttribute="trailing" constant="2" id="aky-Qw-kCU"/>
                             <constraint firstItem="X8P-Y0-OUG" firstAttribute="leading" secondItem="mwB-Nx-hbE" secondAttribute="leading" constant="16" id="alO-Jq-el1"/>
-                            <constraint firstItem="br5-qa-703" firstAttribute="leading" secondItem="GF0-b8-CyU" secondAttribute="trailing" constant="25" id="dOz-yH-FrX"/>
                             <constraint firstItem="br5-qa-703" firstAttribute="top" secondItem="mwB-Nx-hbE" secondAttribute="top" constant="9" id="eO1-cw-16L"/>
                             <constraint firstItem="Lds-ei-WNn" firstAttribute="top" secondItem="br5-qa-703" secondAttribute="bottom" constant="8" id="n8d-F0-ivE"/>
                             <constraint firstItem="Lds-ei-WNn" firstAttribute="leading" secondItem="mwB-Nx-hbE" secondAttribute="leading" constant="2" id="vjc-j7-1dm"/>
@@ -713,9 +864,19 @@
                         <viewLayoutGuide key="safeArea" id="mwB-Nx-hbE"/>
                     </view>
                     <navigationItem key="navigationItem" title="istamusic" id="AHq-bC-z9o">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="c91-vY-Q7t">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="VN4-Cl-AwR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xTk-lt-OPa">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                            </button>
                             <connections>
-                                <segue destination="rII-w0-g0g" kind="show" id="VaL-lG-rwl"/>
+                                <segue destination="rII-w0-g0g" kind="show" id="LNY-tu-lu6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Gruppo" id="c91-vY-Q7t">
+                            <connections>
+                                <segue destination="Unw-yU-Svv" kind="show" id="Hwl-Dk-Cd6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -744,6 +905,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQr-c1-23V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-263" y="-125"/>
+        </scene>
+        <!--Aggiungi Band-->
+        <scene sceneID="fHh-HT-IDy">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="Unw-yU-Svv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yv5-5z-Gwp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zjV-gM-V9s"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Aggiungi Band" id="jPV-44-IgP">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="z56-I0-Icm">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zus-94-oMg">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Salva"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gkV-0i-JZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="-1661"/>
         </scene>
         <!--Login-->
         <scene sceneID="kvw-YS-ud1">
@@ -837,7 +1022,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5j-vp-7QL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614" y="-1721"/>
+            <point key="canvasLocation" x="2744.8000000000002" y="-1721.2893553223389"/>
         </scene>
         <!--Mappa-->
         <scene sceneID="FLn-gK-o9R">
@@ -867,7 +1052,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccr-oI-EC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1613.5999999999999" y="-865.81709145427294"/>
+            <point key="canvasLocation" x="1806" y="-834"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Tsf-ec-boF">
@@ -1010,7 +1195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGc-1d-icS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2498" y="-1721"/>
+            <point key="canvasLocation" x="3816.8000000000002" y="-1721.2893553223389"/>
         </scene>
     </scenes>
     <resources>
@@ -1021,6 +1206,6 @@
         <image name="voti" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9A3-hd-tXl"/>
+        <segue reference="3dt-qA-EWJ"/>
     </inferredMetricsTieBreakers>
 </document>

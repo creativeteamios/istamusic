@@ -31,7 +31,10 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
         if CLLocationManager.locationServicesEnabled() {
             //locationManager.delegate = self
-            centerMap(locationManager.location!.coordinate)
+            //centerMap(locationManager.location!.coordinate)
+            if( (CLLocationManager.authorizationStatus() == .authorizedAlways) || (CLLocationManager.authorizationStatus() == .authorizedWhenInUse)){
+                centerMap(locationManager.location!.coordinate)
+            }
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
@@ -122,7 +125,41 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     // Override MKUserTrackingBarButtonItem button
     func mapView(_ mapView: MKMapView, didChange mode: MKUserTrackingMode, animated: Bool) {
-        centerMap(locationManager.location!.coordinate)
+        if( (CLLocationManager.authorizationStatus() == .authorizedAlways) || (CLLocationManager.authorizationStatus() == .authorizedWhenInUse)){
+            centerMap(locationManager.location!.coordinate)
+        }
+        else{
+            self.locationManager.requestAlwaysAuthorization()
+            self.locationManager.requestWhenInUseAuthorization()
+            
+        }
     }
+
     
+    func enableLocationServices() {
+        locationManager.delegate = self
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            // Request when-in-use authorization initially
+            locationManager.requestWhenInUseAuthorization()
+            break
+            
+        case .restricted, .denied:
+            // Disable location features
+            //disableMyLocationBasedFeatures()
+            break
+            
+        case .authorizedWhenInUse:
+            // Enable basic location features
+            //enableMyWhenInUseFeatures()
+            break
+            
+        case .authorizedAlways:
+            // Enable any of your app's location features
+            //enableMyAlwaysFeatures()
+            break
+        }
+    }
 }
+
