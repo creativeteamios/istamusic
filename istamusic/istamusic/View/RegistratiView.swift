@@ -10,20 +10,15 @@ import UIKit
 
 class RegistratiView: UIViewController {
     
-    @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var nometext: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordTextUno: UITextField!
-    @IBOutlet weak var passwordtextDue: UITextField!
+    @IBOutlet weak var passwordTextDue: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //Codice per far uscire l'icona tonda e aggiungo il margine grigio dello spessore 1
-        imageProfile.layer.cornerRadius = imageProfile.frame.size.width / 2
-        imageProfile.layer.borderColor = UIColor.gray.cgColor
-        imageProfile.layer.borderWidth = 1
-        
     }
     
     @IBAction func addPic(_ sender: Any) {
@@ -32,7 +27,7 @@ class RegistratiView: UIViewController {
     }
     
     @IBAction func registrati(_ sender: Any) {
-        if controlloText(nome: nometext.text!, email: emailText.text!, passwordUno: passwordTextUno.text!, passwordDue: passwordtextDue.text!) == true{
+        if controlloText(nome: nometext.text!, email: emailText.text!, passwordUno: passwordTextUno.text!, passwordDue: passwordTextDue.text!) == true{
             //Aggiungo le credenziali al server e loggo l'utente
             // TODO : Bisgogna registrare l'utente e loggarlo al server
             

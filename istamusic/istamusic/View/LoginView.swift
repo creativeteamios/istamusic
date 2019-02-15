@@ -13,7 +13,6 @@ class LoginView: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,6 +57,7 @@ class LoginView: UIViewController {
             visualizzaErrorCredenzialiAlert(titolo: "Errore credenziali",testo: "Non Avete compilato tutti i campi correttamente.")
         }
     }
+    
     @IBAction func annulla(_ sender: Any) {
         //bottone per toranre alla view precedente
         _ = navigationController?.popViewController(animated: true)
