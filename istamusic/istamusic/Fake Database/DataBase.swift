@@ -63,6 +63,23 @@ class Database{
         
     }
     
+    func addFollower(tagBand: String){
+        for band in bands{
+            if(band.tag == tagBand){
+                band.follower! += 1
+            }
+        }
+    }
+    
+    func getFollower(tagBand: String)-> Int{
+        for band in bands{
+            if(band.tag == tagBand){
+                return band.follower!
+            }
+        }
+        return 0
+    }
+    
     func bandFromTag(tag: String) -> Band{
         let tmp = Band()
         for band in bands{
@@ -71,6 +88,17 @@ class Database{
             }
         }
         return tmp
+    }
+    
+    func aggiungiEvento(tag: String, evento : Evento){
+        eventiaaa.append(evento)
+        ordinaEventiCrescente()
+        
+        for band in bands{
+            if(band.tag == tag){
+                band.eventi.append(evento)
+            }
+        }
     }
     
     func ordinaEventiCrescente(){
@@ -118,8 +146,13 @@ class Database{
         
     }
     
-    
-    
+    func addRecensione(tagGruppo: String, recensione: Recensione){
+        for band in bands{
+            if band.tag! == tagGruppo{
+                band.recensioni.append(recensione)
+            }
+        }
+    }
     
     
     func inizializza(){

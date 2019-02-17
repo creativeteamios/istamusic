@@ -24,6 +24,7 @@ class DettaglioBandView: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var mediaRated: UILabel!
     @IBOutlet weak var numeroRecesioni: UILabel!
     @IBOutlet weak var tabellaRecensioni: UITableView!
+    @IBOutlet weak var seguiButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,12 @@ class DettaglioBandView: UIViewController, UITableViewDelegate, UITableViewDataS
         band = dataBaseShared.bandFromTag(tag: recivedTag)
         setUpView()
         //print(recivedTag)
+        
+        for indice in gestoreUtenteShared.utente.votiDati{
+            if(band.tag == indice){
+                seguiButton.isEnabled = false
+            }
+        }
     }
     
     func setUpView(){
@@ -126,22 +133,67 @@ class DettaglioBandView: UIViewController, UITableViewDelegate, UITableViewDataS
 
     }
     
-    @IBAction func segui(_ sender: Any) {
+    func allertRegistrati(){
+        let alert = UIAlertController(title: "Sembra che tu non sia registrato", message: "Per eseguire quest'azione devi essere registrato.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Annulla", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Registrati", style: .default, handler: { action in
+            print("vai a registrati")
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "LoginView") as! LoginView
+            self.navigationController?.pushViewController(newViewController, animated: true)
+        }))
+        
+        self.present(alert, animated: true)
     }
     
-    @IBAction func contatta(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        setUpView()
+        tabellaRecensioni.reloadData()
+    }
+    
+    @IBAction func segui(_ sender: Any) {
+        if(gestoreUtenteShared.registrato() == true){
+            dataBaseShared.addFollower(tagBand: band.tag!)
+            gestoreUtenteShared.utente.votiDati.append(band.tag!)
+            
+            numeroFollower.text = "\(dataBaseShared.getFollower(tagBand: band.tag!))"
+            
+            seguiButton.isEnabled = false
+            
+        }else{
+            allertRegistrati()
+        }
+        
     }
     
     @IBAction func scriviRecesione(_ sender: Any) {
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "segueScriviRecensione"{
+            //print("INDICE 2")
+            //print(collectionViewBand.indexPathsForSelectedItems[0])
+            let destinationController = segue.destination as! ScriviRecensioneView
+            let tag = band.tag
+            destinationController.tagBand = tag!
+        }
     }
-    */
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if(identifier == "segueScriviRecensione"){
+            if(gestoreUtenteShared.registrato() == false){
+                allertRegistrati()
+                return false
+            }
+        }
+        return true
+    }
+    
 
 }

@@ -19,6 +19,12 @@ class LoginView: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if(gestoreUtenteShared.registrato()){
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     @IBAction func passwordDimenticata(_ sender: Any) {
         //controllo se il campo email non è vuoto e contiene almeno una chiocciola
         if(emailText.text?.isEmpty == false && emailText.text?.contains("@") == true){
@@ -42,11 +48,19 @@ class LoginView: UIViewController {
             //Effettuare Verifica con server
             // TODO: Controllare le credenziali sul server
             
-            let verificaServer = true//questa variabile assume il valore in base a cio che restituisce il server ora l'ho impostata su true per provare il funzionamento
+            let verificaServer = gestoreUtenteShared.controlloCredenziali(username: emailText.text!, password: passwordText.text!)//questa variabile assume il valore in base a cio che restituisce il server ora l'ho impostata su true per provare il funzionamento
             
             if verificaServer == true{
                 //se la verifica è giusta bisogna tornare nella schermata home ed aggiornare la scritta login, con il nome del profilo
                 // TODO: creare codice per tornare alla schermata principale ed aggiornare login con il nome
+                
+                let alert = UIAlertController(title: "LOGIN OK", message: "Login Avvenuto con successo", preferredStyle: .alert)
+            
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                     _ = self.navigationController?.popViewController(animated: true)
+                }))
+                
+                self.present(alert, animated: true)
             }else{
                 //errore credenziali
                 visualizzaErrorCredenzialiAlert(titolo: "Errore credenziali",testo: "Le credenziali inserite non sono valide, si prega di controllare e riprovare.")

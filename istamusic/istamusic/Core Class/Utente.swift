@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class Utente{
+    var nome : String?
+    var username : String?
+    var password : String?
+    var votiDati = [String]()
+}
