@@ -97,6 +97,14 @@ class AddBandView: UIViewController, UIImagePickerControllerDelegate, UINavigati
         }
     }
     
+    func visualizzaAlertOk(){
+        let alert = UIAlertController(title: "AGIIUNTA BAND", message: "Hai aggiunto la band con successo", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            _ = self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true)
+    }
+    
 
     // Cancel button in device gallery view
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -139,5 +147,7 @@ class AddBandView: UIViewController, UIImagePickerControllerDelegate, UINavigati
         else {
             print("FALSE")
         }
+        
+        visualizzaAlertOk()
     }
 }

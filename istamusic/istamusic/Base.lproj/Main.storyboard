@@ -1444,7 +1444,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="boN-kr-dt1" firstAttribute="leading" secondItem="I45-9z-iSO" secondAttribute="leading" constant="8" id="3sA-4y-OC4"/>
-                                    <constraint firstAttribute="bottom" secondItem="IEp-8f-jwV" secondAttribute="bottom" constant="18" id="428-KK-Zhz"/>
                                     <constraint firstAttribute="trailing" secondItem="IEp-8f-jwV" secondAttribute="trailing" constant="10" id="J2j-83-Yb7"/>
                                     <constraint firstItem="IEp-8f-jwV" firstAttribute="leading" secondItem="I45-9z-iSO" secondAttribute="leading" constant="10" id="Y2K-Tg-lfx"/>
                                     <constraint firstAttribute="width" constant="375" id="crX-ba-Ajr"/>
