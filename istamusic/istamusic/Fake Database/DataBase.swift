@@ -38,21 +38,40 @@ class Database{
         ordinaEventiCrescente()
     }
     
+    // Add a new band
+    func addNewBand(newBand: Band) {
+        let newEvent = Evento()
+        newEvent.dataEvento = nil
+        newEvent.descrizioneEvento = nil
+        newEvent.indirizzoEvento = nil
+        newEvent.nomeEvento = nil
+        newEvent.numeroPartecipanti = 0
+        newEvent.tagBand = nil
+        let newRecensione = Recensione()
+        newRecensione.nomePersona = nil
+        newRecensione.recensionetext = nil
+        newRecensione.titoloRecensione = nil
+        newRecensione.votoRecensione = 0
+        newBand.follower = 0
+        newBand.tag = nil
+        bands.append(newBand)
+    }
+    
     //lista eventi
     var eventiaaa = [Evento]()
     func inizializzaEvento(){
         creaArrayDate()
-        for index in 0..<12{
+        for index in 0..<locations.count{
             let ev = Evento()
             let ev2 = Evento()
             ev.nomeEvento = "\(imageBand[index]) Live Music"
             ev2.nomeEvento = "\(imageBand[index]) Live Music"
             ev.dataEvento = dateEventoDate[index]
-            ev2.dataEvento = dateEventoDate[index+12]
+            ev2.dataEvento = dateEventoDate[index+locations.count]
             ev.numeroPartecipanti = numeriPartecipanti[index]
-            ev2.numeroPartecipanti = numeriPartecipanti[index+12]
+            ev2.numeroPartecipanti = numeriPartecipanti[index+locations.count]
             ev.descrizioneEvento = descrizioniEventi[index]
-            ev2.descrizioneEvento = descrizioniEventi[index+12]
+            ev2.descrizioneEvento = descrizioniEventi[index+locations.count]
             ev.indirizzoEvento = indirizziEventi[0]
             ev2.indirizzoEvento = indirizziEventi[1]
             ev.tagBand = "\(index+1)"
@@ -129,10 +148,9 @@ class Database{
         
     }
     
-    
     var recensioniii = [Recensione]()
     func inizializzaRecensione(){
-        for index in 0..<8{
+        for index in 0..<titoliRecensioni.count{
             let rec = Recensione()
             rec.nomePersona = nomiPersone[index]
             rec.recensionetext = testiRecensioni[index]
@@ -161,7 +179,7 @@ class Database{
         inizializzaEvento()
         inizializzaRecensione()
         
-        for index in 0..<12{
+        for index in 0..<locations.count{
             let tmp = Band()
             tmp.nomeGruppo = imageBand[index]
             tmp.image = imageBand[index]
@@ -172,7 +190,6 @@ class Database{
             tmp.tag = "\(index+1)"
             //print("contatore \(index+1)")
             
-            
             tmp.eventi.append(eventiaaa[contatore])
             //print(eventiaaa[contatore].tagBand)
             contatore = contatore + 1
@@ -181,14 +198,8 @@ class Database{
             contatore = contatore + 1
             //print(recensioniii.count)
             
-            
             tmp.recensioni.append(recensioniii.randomElement()!)
             tmp.recensioni.append(recensioniii.randomElement()!)
-            
-            
-            
-            
-            
             
             bands.append(tmp)
         }

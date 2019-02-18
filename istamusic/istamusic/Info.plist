@@ -40,11 +40,11 @@
 		<string>MKDirectionsModeStreetCar</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Consentire l'utilizzo della posizioner per cercare le band?</string>
+	<string>Allow &quot;istamusic&quot; to access your current position?</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Consentire l'utilizzo della posizioner per cercare le band?</string>
+	<string>Allow &quot;istamusic&quot; to access your current position?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Consentire l'utilizzo della posizioner per cercare le band?</string>
+	<string>Allow &quot;istamusic&quot; to access your current position?</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -66,5 +66,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow &quot;istamusic&quot; to access your camera?</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow &quot;istamusic&quot; to access your photos?</string>
 </dict>
 </plist>

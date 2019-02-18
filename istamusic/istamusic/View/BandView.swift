@@ -13,21 +13,42 @@ class BandView: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     @IBOutlet weak var collectionViewBand: UICollectionView!
     @IBOutlet weak var logButton: UIBarButtonItem!
-    
-    
+        
     var index = 0
+    var count = 0
+    
+    func getImage() -> UIImage {
+        var uiImage: UIImage = UIImage()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Image")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            print("speriamo")
+            for data in result as! [NSManagedObject] {
+                if(data.value(forKey: "name") as? String) != nil {
+                    print("image \(data.value(forKey: "name")) found")
+                    let nsdata = data.value(forKey: "name") as! NSData
+                    uiImage = UIImage(data: nsdata as Data)!
+                } else{
+                    print("Image not found")
+                }
+            }
+        } catch {
+            print("Failed")
+        }
+        return uiImage
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let vista = collectionView.dequeueReusableCell(withReuseIdentifier: "dataCollection", for: indexPath) as! CollectionViewSingleCell
-        
         vista.imageCollection.image = UIImage(named: dataBaseShared.bands[indexPath.row].image!)
         vista.imageCollection.layer.borderColor = UIColor.gray.cgColor
         vista.imageCollection.layer.borderWidth = 1
-        
-        
+
         vista.titleCollection.text = dataBaseShared.bands[indexPath.row].nomeGruppo
         vista.descrizioneCollection.text = dataBaseShared.bands[indexPath.row].genereMusicale
-        
         return vista
     }
     
@@ -40,7 +61,7 @@ class BandView: UIViewController, UICollectionViewDelegate, UICollectionViewData
         //inizializzo la collectionView
         collectionViewBand.delegate = self
         collectionViewBand.dataSource = self
-        
+
         //ottengo i dati dal dispositivo
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UtenteRegistrato")
         //request.predicate = NSPredicate(format: "age = %@", "12")
@@ -71,6 +92,7 @@ class BandView: UIViewController, UICollectionViewDelegate, UICollectionViewData
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        collectionViewBand.reloadData()
         if(gestoreUtenteShared.registrato()){
             logButton.title = "Log out"
         }
@@ -131,6 +153,20 @@ class BandView: UIViewController, UICollectionViewDelegate, UICollectionViewData
         self.present(alert, animated: true, completion: nil)
     }
     
+    func allertRegistrati(){
+        let alert = UIAlertController(title: "Sembra che tu non sia registrato", message: "Per eseguire quest'azione devi essere registrato.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Annulla", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Registrati", style: .default, handler: { action in
+            print("vai a registrati")
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "LoginView") as! LoginView
+            self.navigationController?.pushViewController(newViewController, animated: true)
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -155,6 +191,12 @@ class BandView: UIViewController, UICollectionViewDelegate, UICollectionViewData
         if(identifier == "segueBandLogin"){
             if(gestoreUtenteShared.registrato() == true){
                 eseguiLogout()
+                return false
+            }
+        }
+        if(identifier == "segueBandAddBand"){
+            if(gestoreUtenteShared.registrato() == false){
+                allertRegistrati()
                 return false
             }
         }
