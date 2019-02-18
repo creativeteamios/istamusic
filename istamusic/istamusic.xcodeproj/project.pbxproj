@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831E11992219E7C7004227C7 /* AddBandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831E11982219E7C7004227C7 /* AddBandView.swift */; };
+		831E11A0221A9E23004227C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831E119F221A9E23004227C7 /* Assets.xcassets */; };
 		834F5F3E221571740077326C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F5F3D221571740077326C /* MapView.swift */; };
 		D1481EF9220E06F000879172 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1481EF8220E06F000879172 /* LoginView.swift */; };
 		D1481EFE220E177600879172 /* RegistratiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1481EFD220E177600879172 /* RegistratiView.swift */; };
@@ -14,7 +16,6 @@
 		D14CB7BE220D7E0F0041012E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14CB7BD220D7E0F0041012E /* ViewController.swift */; };
 		D14CB7C1220D7E0F0041012E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14CB7BF220D7E0F0041012E /* Main.storyboard */; };
 		D14CB7C4220D7E0F0041012E /* istamusic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D14CB7C2220D7E0F0041012E /* istamusic.xcdatamodeld */; };
-		D14CB7C6220D7E0F0041012E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14CB7C5220D7E0F0041012E /* Assets.xcassets */; };
 		D14CB7C9220D7E0F0041012E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14CB7C7220D7E0F0041012E /* LaunchScreen.storyboard */; };
 		D1D1C4EF220F21E70050014B /* CercaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4EE220F21E70050014B /* CercaView.swift */; };
 		D1D1C4F1220F259D0050014B /* TableSingleCellCerca.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1C4F0220F259D0050014B /* TableSingleCellCerca.swift */; };
@@ -30,9 +31,15 @@
 		D1DE7F462215651100F61556 /* DettaglioBandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE7F452215651100F61556 /* DettaglioBandView.swift */; };
 		D1DE7F482215A89D00F61556 /* TableSingleCellRecensioni.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE7F472215A89D00F61556 /* TableSingleCellRecensioni.swift */; };
 		D1DE7F4B2215C88300F61556 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DE7F4A2215C88300F61556 /* MapKit.framework */; };
+		D1DE7F4D2216F6D100F61556 /* CreaEventoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE7F4C2216F6D100F61556 /* CreaEventoView.swift */; };
+		D1DE7F4F2216FFBE00F61556 /* ScriviRecensioneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE7F4E2216FFBE00F61556 /* ScriviRecensioneView.swift */; };
+		D1DE7F51221988A700F61556 /* Utente.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE7F50221988A700F61556 /* Utente.swift */; };
+		D1DE7F5322198A1000F61556 /* GestoreUtente.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE7F5222198A1000F61556 /* GestoreUtente.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		831E11982219E7C7004227C7 /* AddBandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBandView.swift; sourceTree = "<group>"; };
+		831E119F221A9E23004227C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		834F5F3D221571740077326C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D1481EF8220E06F000879172 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D1481EFD220E177600879172 /* RegistratiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistratiView.swift; sourceTree = "<group>"; };
@@ -41,7 +48,6 @@
 		D14CB7BD220D7E0F0041012E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D14CB7C0220D7E0F0041012E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D14CB7C3220D7E0F0041012E /* istamusic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = istamusic.xcdatamodel; sourceTree = "<group>"; };
-		D14CB7C5220D7E0F0041012E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D14CB7C8220D7E0F0041012E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D14CB7CA220D7E0F0041012E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1D1C4EE220F21E70050014B /* CercaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CercaView.swift; sourceTree = "<group>"; };
@@ -58,6 +64,10 @@
 		D1DE7F452215651100F61556 /* DettaglioBandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettaglioBandView.swift; sourceTree = "<group>"; };
 		D1DE7F472215A89D00F61556 /* TableSingleCellRecensioni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSingleCellRecensioni.swift; sourceTree = "<group>"; };
 		D1DE7F4A2215C88300F61556 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D1DE7F4C2216F6D100F61556 /* CreaEventoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreaEventoView.swift; sourceTree = "<group>"; };
+		D1DE7F4E2216FFBE00F61556 /* ScriviRecensioneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriviRecensioneView.swift; sourceTree = "<group>"; };
+		D1DE7F50221988A700F61556 /* Utente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utente.swift; sourceTree = "<group>"; };
+		D1DE7F5222198A1000F61556 /* GestoreUtente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestoreUtente.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +109,7 @@
 				D14CB7BB220D7E0F0041012E /* AppDelegate.swift */,
 				D14CB7BD220D7E0F0041012E /* ViewController.swift */,
 				D14CB7BF220D7E0F0041012E /* Main.storyboard */,
-				D14CB7C5220D7E0F0041012E /* Assets.xcassets */,
+				831E119F221A9E23004227C7 /* Assets.xcassets */,
 				D14CB7C7220D7E0F0041012E /* LaunchScreen.storyboard */,
 				D14CB7CA220D7E0F0041012E /* Info.plist */,
 				D14CB7C2220D7E0F0041012E /* istamusic.xcdatamodeld */,
@@ -111,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D1D1C4F922107EF50050014B /* DataBase.swift */,
+				D1DE7F5222198A1000F61556 /* GestoreUtente.swift */,
 			);
 			path = "Fake Database";
 			sourceTree = "<group>";
@@ -125,6 +136,9 @@
 				D1D1C5112214229F0050014B /* BandView.swift */,
 				834F5F3D221571740077326C /* MapView.swift */,
 				D1DE7F452215651100F61556 /* DettaglioBandView.swift */,
+				D1DE7F4C2216F6D100F61556 /* CreaEventoView.swift */,
+				D1DE7F4E2216FFBE00F61556 /* ScriviRecensioneView.swift */,
+				831E11982219E7C7004227C7 /* AddBandView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,6 +161,7 @@
 				D1D1C4F2220F2C4B0050014B /* Band.swift */,
 				D1D1C4F4220F2E680050014B /* Evento.swift */,
 				D1D1C4F6220F2EBE0050014B /* Recensione.swift */,
+				D1DE7F50221988A700F61556 /* Utente.swift */,
 			);
 			path = "Core Class";
 			sourceTree = "<group>";
@@ -223,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D14CB7C9220D7E0F0041012E /* LaunchScreen.storyboard in Resources */,
-				D14CB7C6220D7E0F0041012E /* Assets.xcassets in Resources */,
+				831E11A0221A9E23004227C7 /* Assets.xcassets in Resources */,
 				D14CB7C1220D7E0F0041012E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,9 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D14CB7BE220D7E0F0041012E /* ViewController.swift in Sources */,
+				D1DE7F5322198A1000F61556 /* GestoreUtente.swift in Sources */,
 				D1DE7F462215651100F61556 /* DettaglioBandView.swift in Sources */,
 				D1D1C4FC221191F80050014B /* EventiView.swift in Sources */,
 				D14CB7C4220D7E0F0041012E /* istamusic.xcdatamodeld in Sources */,
+				D1DE7F4F2216FFBE00F61556 /* ScriviRecensioneView.swift in Sources */,
 				D1D1C4F3220F2C4B0050014B /* Band.swift in Sources */,
 				D1D1C4EF220F21E70050014B /* CercaView.swift in Sources */,
 				D14CB7BC220D7E0F0041012E /* AppDelegate.swift in Sources */,
@@ -246,11 +263,14 @@
 				D1D1C50E2211F2C30050014B /* TableSingleCellEventi.swift in Sources */,
 				D1481EF9220E06F000879172 /* LoginView.swift in Sources */,
 				834F5F3E221571740077326C /* MapView.swift in Sources */,
+				831E11992219E7C7004227C7 /* AddBandView.swift in Sources */,
 				D1D1C5122214229F0050014B /* BandView.swift in Sources */,
 				D1DE7F482215A89D00F61556 /* TableSingleCellRecensioni.swift in Sources */,
 				D1D1C4FA22107EF50050014B /* DataBase.swift in Sources */,
+				D1DE7F4D2216F6D100F61556 /* CreaEventoView.swift in Sources */,
 				D1D1C4F5220F2E680050014B /* Evento.swift in Sources */,
 				D1D1C4F1220F259D0050014B /* TableSingleCellCerca.swift in Sources */,
+				D1DE7F51221988A700F61556 /* Utente.swift in Sources */,
 				D1D1C4F7220F2EBE0050014B /* Recensione.swift in Sources */,
 				D1481EFE220E177600879172 /* RegistratiView.swift in Sources */,
 				D1D1C510221421A40050014B /* CollectionViewSingleCell.swift in Sources */,

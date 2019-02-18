@@ -39,6 +39,11 @@ class EventiView: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelega
         tableEventi.delegate = self
         tableEventi.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableEventi.reloadData()
+    }
+    
     //gestione tab sulla mappa
     @objc func handleTap(gestureReconizer: UILongPressGestureRecognizer) {
         
@@ -143,8 +148,20 @@ class EventiView: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelega
             return cellEvntList
         }
     }
-
     
+    func allertRegistrati(){
+        let alert = UIAlertController(title: "Sembra che tu non sia registrato", message: "Per eseguire quest'azione devi essere registrato.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Annulla", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Registrati", style: .default, handler: { action in
+            print("vai a registrati")
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "LoginView") as! LoginView
+            self.navigationController?.pushViewController(newViewController, animated: true)
+        }))
+        
+        self.present(alert, animated: true)
+    }
     
     // MARK: - Navigation
 
@@ -163,6 +180,20 @@ class EventiView: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelega
                 
             }
         }
+        
+        if(segue.identifier == "segueEventiAdd"){
+            print("cicciobello")
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if(identifier == "segueEventiAdd"){
+            if(gestoreUtenteShared.registrato() == false){
+                allertRegistrati()
+                return false
+            }
+        }
+        return true
     }
     
 

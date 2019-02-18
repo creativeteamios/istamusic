@@ -13,28 +13,21 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var myLocation: CLLocationCoordinate2D?
-    
-    let database = Database()
-    
     let locationManager = CLLocationManager()
+    
+    var buttonItem: MKUserTrackingBarButtonItem = MKUserTrackingBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-        
         // Current position button
-        let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
+        buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
         self.navigationItem.rightBarButtonItem = buttonItem
         
         if CLLocationManager.locationServicesEnabled() {
             //locationManager.delegate = self
-            //centerMap(locationManager.location!.coordinate)
-            if( (CLLocationManager.authorizationStatus() == .authorizedAlways) || (CLLocationManager.authorizationStatus() == .authorizedWhenInUse)){
-                centerMap(locationManager.location!.coordinate)
-            }
+            self.locationManager.requestAlwaysAuthorization()
+            self.locationManager.requestWhenInUseAuthorization()
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
@@ -43,11 +36,6 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         mapView.mapType = .standard
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
-        
-        if let coor = mapView.userLocation.location?.coordinate{
-            mapView.setCenter(coor, animated: true)
-        }
-        
         mapView.showsCompass = true
         mapView.showsScale = true
         mapView.showsTraffic = true
@@ -56,29 +44,22 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     // Current position
-    func centerMap(_ center:CLLocationCoordinate2D){
+    func centerMap(_ center: CLLocationCoordinate2D){
         let spanX = 0.700
         let spanY = 0.700
         
-        let newRegion = MKCoordinateRegion(center:center , span: MKCoordinateSpan(latitudeDelta: spanX, longitudeDelta: spanY))
+        let newRegion = MKCoordinateRegion(center: center , span: MKCoordinateSpan(latitudeDelta: spanX, longitudeDelta: spanY))
         mapView.setRegion(newRegion, animated: true)
     }
     
-    /*
-     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-     let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-     
-     centerMap(locValue)
-     }
-     */
-    
+    // Shows database items on map
     func addAnnotation() {
-        for i in 0..<database.locations.count {
+        for i in 0..<dataBaseShared.bands.count {
             let geoCoder = CLGeocoder()
             
             let annotation = MKPointAnnotation()
-            annotation.title = database.imageBand[i]
-            annotation.subtitle = database.locations[i]
+            annotation.title = dataBaseShared.bands[i].nomeGruppo
+            annotation.subtitle = dataBaseShared.bands[i].location
             
             geoCoder.geocodeAddressString(annotation.subtitle!, completionHandler: { placemarks, error in
                 if let error = error {
@@ -125,41 +106,23 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     // Override MKUserTrackingBarButtonItem button
     func mapView(_ mapView: MKMapView, didChange mode: MKUserTrackingMode, animated: Bool) {
-        if( (CLLocationManager.authorizationStatus() == .authorizedAlways) || (CLLocationManager.authorizationStatus() == .authorizedWhenInUse)){
+        if ((CLLocationManager.authorizationStatus() == .authorizedAlways) || (CLLocationManager.authorizationStatus() == .authorizedWhenInUse)) {
             centerMap(locationManager.location!.coordinate)
         }
-        else{
-            self.locationManager.requestAlwaysAuthorization()
-            self.locationManager.requestWhenInUseAuthorization()
-            
-        }
-    }
-
-    
-    func enableLocationServices() {
-        locationManager.delegate = self
-        
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined:
-            // Request when-in-use authorization initially
-            locationManager.requestWhenInUseAuthorization()
-            break
-            
-        case .restricted, .denied:
-            // Disable location features
-            //disableMyLocationBasedFeatures()
-            break
-            
-        case .authorizedWhenInUse:
-            // Enable basic location features
-            //enableMyWhenInUseFeatures()
-            break
-            
-        case .authorizedAlways:
-            // Enable any of your app's location features
-            //enableMyAlwaysFeatures()
-            break
+        else {
+            let alert: UIAlertController = UIAlertController(title: "Please go to istamusic Settings and turn on permissions", message: nil, preferredStyle: .alert)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("Settings opened: \(success)")
+                    })
+                }
+            }
+            present(alert, animated: true, completion: nil)
+            alert.addAction(settingsAction)
         }
     }
 }
-
